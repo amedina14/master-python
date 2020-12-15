@@ -33,3 +33,14 @@ print(rango)
 print(type(rango))
 print(dato_byte)
 print(type(dato_byte))
+
+#Convertire dati
+testo = "Testo di prova"
+numerito = str(776)
+print(testo + " " + numerito)
+print("tipo dato 'numerito': ",type(numerito))
+numerito = int(776)
+print("tipo dato 'numerito': ",type(numerito))
+#numerito = float(776)
+numerito = float(numerito)
+print("tipo dato 'numerito': ",type(numerito))
