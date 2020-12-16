@@ -88,7 +88,7 @@ elif day == 5:
 elif day > 5:
     print("Weekend")
 
-print("\n######### ESEMPIO 5: Weekend #########")
+print("\n######### ESEMPIO 5: lavoratore #########")
 eta_minima = 18
 eta_massima = 65
 eta_ufficiale = 17
@@ -97,3 +97,27 @@ if eta_ufficiale >= 18 and eta_ufficiale <= 65:
     print("Può lavorare")
 else:
     print(f"Non può lavorare, età ufficiale {eta_ufficiale}")
+
+print("\n######### ESEMPIO 6: paese anglo #########")
+paese = "Ecuador"
+
+if paese == "Inghilterra" or paese == "USA" or paese == "Canada":
+    print(f"Paese {paese} anglossasone")
+else:
+    print(f"Paese {paese} non anglossasone")
+
+print("\n######### ESEMPIO 7: negazione anglo #########")
+paese = "Ecuador"
+
+if not (paese == "Inghilterra" or paese == "USA" or paese == "Canada"):
+    print(f"Paese {paese} non anglossasone")
+else:
+    print(f"Paese {paese} anglossasone")
+
+print("\n######### ESEMPIO 8: negazione anglo #########")
+paese = "Ecuador"
+
+if paese != "Inghilterra" and paese != "USA" and paese != "Canada":
+    print(f"Paese {paese} non anglossasone")
+else:
+    print(f"Paese {paese} anglossasone")
