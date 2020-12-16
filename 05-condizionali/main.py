@@ -14,6 +14,12 @@ else false:
 <=
 >=
 
+#Operatori logici
+and (e)
+or (o)
+not (No)
+! (negazione)
+
 """
 
 # Esempio 1
@@ -53,7 +59,8 @@ else:
     print(f"Utente {nome} è minorenne")
 
 print("\n######### ESEMPIO 4: Weekend #########")
-day = int(input("Insert day: "))
+#day = int(input("Insert day: "))
+day = 5
 
 """
 if day == 1:
@@ -80,3 +87,13 @@ elif day == 5:
     print("Venerdi")
 elif day > 5:
     print("Weekend")
+
+print("\n######### ESEMPIO 5: Weekend #########")
+eta_minima = 18
+eta_massima = 65
+eta_ufficiale = 17
+
+if eta_ufficiale >= 18 and eta_ufficiale <= 65:
+    print("Può lavorare")
+else:
+    print(f"Non può lavorare, età ufficiale {eta_ufficiale}")
