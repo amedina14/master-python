@@ -49,5 +49,34 @@ if eta >= maggiorenne:
         print(f"Utente non europeo, è di {continente}")
     else:
         print(f"Utente europeo, è di {citta}")
-else:    
+else:
     print(f"Utente {nome} è minorenne")
+
+print("\n######### ESEMPIO 4: Weekend #########")
+day = int(input("Insert day: "))
+
+"""
+if day == 1:
+    print("Monday")
+else:
+    if day == 2:
+        print("Tuesday")
+    else:
+        if day == 3:
+            print("Tuesday")
+        else:
+            if day == 4:
+                print("Tuesday")
+"""
+if day == 1:
+    print("Lunedi")
+elif day == 2:
+    print("Martedi")
+elif day == 3:
+    print("Mercoledi")
+elif day == 4:
+    print("Giovedi")
+elif day == 5:
+    print("Venerdi")
+elif day > 5:
+    print("Weekend")
