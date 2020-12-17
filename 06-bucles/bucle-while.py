@@ -25,3 +25,22 @@ while i<=5:
     print(colonna)
     i+=1
 
+print("------------------------ Tabella di moltiplicazione while")
+numero_utente = int(input("Di che numero vuoi vedere la tabellina?: "))
+i=1
+
+
+while i<11:
+
+    if numero_utente < 1:
+        print("Valore invalido")
+        break
+    """
+    elif type(numero_utente) != int:
+        break
+    """
+    
+    #ris = numero_utente*i
+    print(f"{numero_utente}x{i}: {numero_utente*i}")
+    i+=1
+
