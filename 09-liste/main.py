@@ -26,3 +26,8 @@ print(cinemas[1:]) #Prende tutti gli elementi dall'uno in avanti
 films[1] = "Gran Torino"
 print(films)
 
+# Aggiungere elementi alle liste
+
+cinemas.append("Cine Rock Star")
+cinemas.append("CineStellar")
+print(cinemas)
