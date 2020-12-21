@@ -1,6 +1,7 @@
 """
 Lista di 8 numeri interi
 -scorrere e stamparla
+-funzione che scorra la lista e restituisca un string
 -ordinarla e stamparla
 -mostrare lunghezza
 -Cercare elemento richiesto da tastiera
@@ -13,13 +14,23 @@ for numero in numeri:
     print(numero)
 
 #2
+def scorri(lista):
+    risultato = ""
+    for i in lista: # 'i' prende il valore dell'elemento
+        risultato += str(i)
+        if lista.index(i)+1 < len(lista): # da 1 a < 8: stampa la ", " alla stringa
+            risultato += ", "                        
+    return risultato
+print("\n"+scorri(numeri))
+
+#3
 numeri.sort()
 print(f"\nLista ordinata: {numeri}")
 
-#3
+#4
 print(f"\nLunghezza della lista: {len(numeri)}")
 
-#4
+#5
 cerca = int(input("\nInserisci il numero da cercare: "))
 position = numeri.index(cerca)
 print("Il numero \""+ str(cerca) +"\" si trova nel indice: "+str(position))
