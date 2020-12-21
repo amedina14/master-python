@@ -3,6 +3,7 @@ Dizionario
 Un tipo di collezione che memorizza dati in formato
 chiave > valore.
 Simile ad un array associativo o ad un oggetto json
+La chiave è di tipo testo
 """
 
 persona = {
