@@ -15,3 +15,14 @@ print(films)
 print(cinemas)
 print(year)
 print(mixed)
+
+# Accedere all'indice
+print("\n#### Indici ####")
+print(films[3])
+print(films[-4])
+print(films[1:3])
+print(cinemas[1:]) #Prende tutti gli elementi dall'uno in avanti
+
+films[1] = "Gran Torino"
+print(films)
+
