@@ -6,6 +6,7 @@ maiuscola
 """
 
 variabile = ""
+num = None
 
 if len(variabile.strip()) <= 0:
     variabile = "riempito per default".upper()
@@ -13,3 +14,7 @@ if len(variabile.strip()) <= 0:
 else:
     print("\"Variabile\" ha contenuto")
 print(variabile)
+
+#print(num)
+if num == None:
+    print(f"\"num\" vuota: {num}")
