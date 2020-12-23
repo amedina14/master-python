@@ -25,12 +25,18 @@ print("\n"+scorri(numeri))
 
 #3
 numeri.sort()
-print(f"\nLista ordinata: {numeri}")
+print(f"\nLista ordinata: {scorri(numeri)}")
 
 #4
 print(f"\nLunghezza della lista: {len(numeri)}")
 
 #5
 cerca = int(input("\nInserisci il numero da cercare: "))
+controlla = isinstance(cerca, int)
+while not controlla or cerca <= 0: 
+    cerca = int(input("\nInserisci il numero da cercare: "))
+else:
+    print(f"Inserito {cerca}")
 position = numeri.index(cerca)
 print("Il numero \""+ str(cerca) +"\" si trova nel indice: "+str(position))
+
