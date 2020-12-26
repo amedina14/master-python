@@ -23,4 +23,6 @@ print(saluta("Adrian"))
 
 from mio_modulo import *
 
-print(saluta("Adrian"))
+s = saluta("Adrian")
+
+print(s)
