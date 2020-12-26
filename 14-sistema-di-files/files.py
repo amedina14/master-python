@@ -1,5 +1,6 @@
 from io import open
 import pathlib # Per prendere il path assoluto
+import shutil
 
 path = str(pathlib.Path().absolute()) + "/14-sistema-di-files/file_di_testo.txt"
 print(path)
@@ -17,9 +18,7 @@ while flag == True:
     if i == 10:
         #break
         flag = False
-print(
-
-)
+print()
 #Chiudere file
 file.close()
 
@@ -50,3 +49,9 @@ for riga in lista:
     #print(riga.center(50)) 
     #aggiunge 50 spazzi ai fianchi per centrare
     
+#Copiare files
+indirizzo_originale = str(pathlib.Path().absolute()) + "/14-sistema-di-files/file_di_testo.txt"
+indirizzo_nuovo = str(pathlib.Path().absolute()) + "/14-sistema-di-files/file_di_testo_copiato.txt"
+#indirizzo_alternativo = str(pathlib.Path().absolute()) + "/13-packages/file_di_testo_copiato.txt"
+
+shutil.copyfile(indirizzo_originale, indirizzo_nuovo)
