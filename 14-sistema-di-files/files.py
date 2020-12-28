@@ -18,7 +18,7 @@ while flag == True:
     if i == 10:
         #break
         flag = False
-print()
+file.write("\n")
 #Chiudere file
 file.close()
 
