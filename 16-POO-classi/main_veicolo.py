@@ -8,7 +8,7 @@ class Veicolo:
     colore = "Rosso"
     marca = "Ferrari"
     modelo = "599 GTO"
-    velocidad = 350
+    velocita = 350
     cv = 550
     posti = 2
 
@@ -16,27 +16,53 @@ class Veicolo:
 
 
     # Metodi (Azioni dell'oggetto)
+    def setColore(self, colore):
+        self.colore = colore
+
+    def getColore(self):
+        return self.colore
+    
+    def setModelo(self, modelo):
+        self.modelo = modelo
+
+    def getModelo(self):
+        return self.modelo
+
+    def setMarca(self, marca):
+        self.marca = marca
+
+    def getMarca(self):
+        return self.marca
+
     def accelerare(self):
-        self.velocidad += 1
+        self.velocita += 1
 
     def frenare(self):
-        self.velocidad -= 1
+        self.velocita -= 1
 
     def getVelocita(self):
-        return self.velocidad        
+        return self.velocita        
+
+    def setVelocita(self, velocita):
+        self.velocita = velocita
 
 #Fine classe
 
 # Creare oggetto / istanziare
-ferrari_599_rossa = Veicolo() 
+ferrari = Veicolo() 
 
-print(ferrari_599_rossa.marca, ferrari_599_rossa.colore)
-print("Km/h:",ferrari_599_rossa.velocidad)
+sceltaColore = input("Inserisci colore a tua scelta: ")
+ferrari.setColore(sceltaColore)
+sceltaModelo = input("Inserisci un modelo a tua scelta: ")
+ferrari.setModelo(sceltaModelo)
+
+print(ferrari.getMarca(), ferrari.getColore(), ferrari.getModelo())
+print("Km/h:",ferrari.getVelocita())
 
 for accelerando in range(0,20):
-    ferrari_599_rossa.accelerare()
-print("Accelerata Km/h:",ferrari_599_rossa.velocidad)
+    ferrari.accelerare()
+print("Accelerata Km/h:",ferrari.getVelocita())
 
 for frenando in range(0,15):
-    ferrari_599_rossa.frenare()
-print("Frenata Km/h:",ferrari_599_rossa.velocidad)
+    ferrari.frenare()
+print("Frenata Km/h:",ferrari.getVelocita())
