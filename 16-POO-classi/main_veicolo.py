@@ -56,9 +56,12 @@ ferrari.setColore(sceltaColore)
 sceltaModelo = input("Inserisci un modelo a tua scelta: ")
 ferrari.setModelo(sceltaModelo)
 
-print(ferrari.getMarca(), ferrari.getColore(), ferrari.getModelo())
+print("\n## Ferrari 1 ##")
+print("Marca: "+ferrari.getMarca(), "\nColore: "+ferrari.getColore(), "\nModelo: "+ferrari.getModelo())
 print("Km/h:",ferrari.getVelocita())
+print("Oggetto del tipo:", type(ferrari).__name__)
 
+print("\n## In moto ##")
 for accelerando in range(0,20):
     ferrari.accelerare()
 print("Accelerata Km/h:",ferrari.getVelocita())
@@ -66,3 +69,9 @@ print("Accelerata Km/h:",ferrari.getVelocita())
 for frenando in range(0,15):
     ferrari.frenare()
 print("Frenata Km/h:",ferrari.getVelocita())
+
+#Creare multipli oggetti
+ferrari_default_599 = Veicolo()
+
+print("\n## Ferrari 2 ##\nMarca: "+ferrari_default_599.getMarca(), "\nModelo: "+ferrari_default_599.getModelo(), "\nColore: "+ferrari_default_599.getColore(), "\nVelocita: "+str(ferrari_default_599.getVelocita()))
+print("Oggetto del tipo:", type(ferrari_default_599).__name__)
