@@ -1,52 +1,52 @@
 class Veicolo:
 
     # Attributi o Proprietà (Variabili)
-    colore = "Rosso"
-    marca = "Ferrari"
-    modelo = "599 GTO"
-    velocita = 350
+    __colore = "Rosso"
+    __marca = "Ferrari"
+    __modelo = "599 GTO"
+    __velocita = 350
     cv = 550
     posti = 2
 
     # Costruttore
     def __init__(self, colore, marca, modelo, velocita, cv, posti):
-        self.colore = colore
-        self.marca = marca
-        self.modelo = modelo
-        self.velocita = velocita
+        self.__colore = colore
+        self.__marca = marca
+        self.__modelo = modelo
+        self.__velocita = velocita
         self.cv = cv
         self.posti = posti
 
     # Metodi (Azioni dell'oggetto)
     def setColore(self, colore):
-        self.colore = colore
+        self.__colore = colore
 
     def getColore(self):
-        return self.colore
+        return self.__colore
     
     def setModelo(self, modelo):
-        self.modelo = modelo
+        self.__modelo = modelo
 
     def getModelo(self):
-        return self.modelo
+        return self.__modelo
 
     def setMarca(self, marca):
-        self.marca = marca
+        self.__marca = marca
 
     def getMarca(self):
-        return self.marca
+        return self.__marca
 
     def accelerare(self):
-        self.velocita += 1
+        self.__velocita += 1
 
     def frenare(self):
-        self.velocita -= 1
+        self.__velocita -= 1
 
     def getVelocita(self):
-        return self.velocita        
+        return self.__velocita        
 
     def setVelocita(self, velocita):
-        self.velocita = velocita
+        self.__velocita = velocita
 
     def getInfo(self):
         #result = "---------Informazione veicolo---------"
