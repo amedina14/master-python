@@ -24,3 +24,13 @@ for macchina in lista_macchine:
 #print(macchina1.getInfo())
 #print(lista_macchine[0].getInfo())
 #print(macchina1.getInfo())
+
+
+# Verifica tipo oggetto
+print("-------------------")
+### da rivedere e correggere qui sotto
+if type(macchina3) == Veicolo:
+    print(isinstance(macchina3, Veicolo))
+    print("L'oggetto è una macchina", macchina3.getMarca(), macchina3.getModelo())
+else:
+    print("L'oggetto non è una macchina")
