@@ -47,6 +47,7 @@ class Informatico(Persona):
     esperienza
     progetti
     """
+    linguaggi = ""
 
     def __init__(self): # Costruttore che aggiunge automaticamente valori alle proprieta
         self.linguaggi = "Python, Java, C#, JavaScript"
@@ -54,9 +55,11 @@ class Informatico(Persona):
     
     def getLinguaggi(self):
         return self.linguaggi
+    def setLinguaggi(self, linguaggi):
+        self.linguaggi = linguaggi
     
     def imparare(self, linguaggi):
-        self.linguaggi = linguaggi
+        self.linguaggi += "*"+linguaggi+" "
         return self.linguaggi
     
     def programmare(self):
@@ -64,3 +67,15 @@ class Informatico(Persona):
     
     def ripararePc(self):
         return "Ho riparato il tuo pc"
+
+class TecnicoReti(Informatico):
+
+    def __init__(self):
+        super().__init__()
+        self.auditReti = 'Esperto'
+        self.esperienzaReti = 5
+        
+    def audit(self):
+        return "Sto audendo la rete"
+
+    
