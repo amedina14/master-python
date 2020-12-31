@@ -28,7 +28,6 @@ for macchina in lista_macchine:
 
 # Verifica tipo oggetto
 print("-------------------")
-### da rivedere e correggere qui sotto
 if type(macchina3) == Veicolo:
     print(isinstance(macchina3, Veicolo))
     print("L'oggetto è una macchina", macchina3.getMarca(), macchina3.getModelo())
