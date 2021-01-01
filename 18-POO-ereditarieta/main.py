@@ -1,4 +1,4 @@
-import classi
+from classi import classi
 
 # Persona normale
 persona = classi.Persona()
