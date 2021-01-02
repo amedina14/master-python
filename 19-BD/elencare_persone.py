@@ -11,7 +11,12 @@ persone = cursor.fetchall()
 for persona in persone:
     print("-----------")
     for dato in persona:
-        print(f"{dato}")
+        if persona.index(dato) == 0:
+            print(f"ID: {dato}")
+        elif persona.index(dato) == 1:
+            print(f"Nome: {dato}")
+        elif persona.index(dato) == 2:
+            print(f"Qualifica: {dato}")
 print()
 
 conn.close()
