@@ -18,7 +18,15 @@ elenco_prodotti = cursor.fetchall()
 for prodotto in elenco_prodotti:
     print("----------------")
     for dato in prodotto:
-        print(f"{prodotto.index(dato)}: {dato}")
+        if prodotto.index(dato) == 0:
+            print(f"ID: {dato}")
+        elif prodotto.index(dato) == 1:
+            print(f"Titolo prodotto: {dato}")
+        elif prodotto.index(dato) == 2:
+            print(f"Descrizione: {dato}")
+        elif prodotto.index(dato) == 3:
+            print(f"Prezzo: {dato}")
+        #print(f"{prodotto.index(dato)}: {dato}")
 print()
 
 # Infine si chiude la connesione
