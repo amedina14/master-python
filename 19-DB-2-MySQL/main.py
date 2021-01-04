@@ -24,3 +24,6 @@ for db in cursor:
     print(db)
 """
 """
+
+# Chiudere connessione
+database.close()
