@@ -1,5 +1,6 @@
 import mysql.connector
 
+# Connettere a mysql
 database = mysql.connector.Connect(
     host="localhost",
     user="root",
@@ -11,10 +12,13 @@ database = mysql.connector.Connect(
 # Verificare la connessione con mysql.connector
 print(database)
 
+# Crea cursore che permette realizzare query
 cursor = database.cursor()
 
+# Crea db
 cursor.execute("CREATE DATABASE IF NOT EXISTS master_python")
 
+# Mostra la lista dei bd
 cursor.execute("SHOW DATABASES")
 for db in cursor:
     print(db)
