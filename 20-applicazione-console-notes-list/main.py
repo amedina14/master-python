@@ -8,19 +8,6 @@ Applicazione di console 'Lista appunti' Python e Mysql:
 """
 from utenti import azioni
 
-"""
-import mysql.connector
-
-connessione = mysql.connector.connect(
-    host = "localhost",
-    user = "root",
-    passwd = "",
-    port = 3308,
-    database = "master_python"
-)
-
-cursor = connessione.cursor()
-"""
 scelta = azioni.Azioni()
 
 print("""
