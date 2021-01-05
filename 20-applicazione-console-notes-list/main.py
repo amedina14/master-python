@@ -28,4 +28,3 @@ if azione == "Registro":
 elif azione == "Login":
     scelta.login()
 
-#connessione.close()
