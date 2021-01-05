@@ -7,3 +7,21 @@ Applicazione di console 'Lista appunti' Python e Mysql:
 - Crea, legge, e cancella appunti. 
 """
 
+
+print("""
+Azioni disponibili:
+    -Registro
+    -Login
+""")
+
+azione = input("Inserisci la tua scelta: ").capitalize()
+#print(f"'{azione}'")
+
+if azione == "Registro":
+    print("Registro utente selezionato. ")
+
+elif azione == "Login":
+    print("Login selezionato. Entra nel sistema: ")
+
+    #ins_email= input("Inserisci email: ")
+    #ins_pwd= input("Inserisci password: ")
