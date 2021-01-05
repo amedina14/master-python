@@ -1,13 +1,25 @@
 class Azioni:
 
     def registro(self):
-        print("Registro utente selezionato. ")
+        print("\nRegistro utente selezionato. ")
 
         try:
             regs_nome = input(f"Registra nome utente: ")
-            regs_cognome = input(f"Registra cognome utente: ")
-            regs_email = input(f"Registra email utente: ")
-            regs_pwd = input(f"Registra password utente: ")
+            if type(regs_nome).__name__ == 'str': 
+                print("Valore accettato")
+                #raise ValueError("Non è string")
+
+            regs_cognome = input(f"\nRegistra cognome utente: ")
+            if type(regs_cognome).__name__ == 'str': 
+                print("Valore accettato")
+
+            regs_email = input(f"\nRegistra email utente: ")
+            if type(regs_email).__name__ == 'str': 
+                print("Valore accettato")
+
+            regs_pwd = input(f"\nRegistra password utente: ")
+            if type(regs_pwd).__name__ == 'str': 
+                print("Valore accettato")
             print()
         except:
             print("Errore: I dati inseriti non sono corretti")
