@@ -6,6 +6,9 @@ Applicazione di console 'Lista appunti' Python e Mysql:
 - Se scegliamo login, identifica l'user chiedendo le credenziali
 - Crea, legge, e cancella appunti. 
 """
+from utenti import azioni
+
+"""
 import mysql.connector
 
 connessione = mysql.connector.connect(
@@ -17,6 +20,8 @@ connessione = mysql.connector.connect(
 )
 
 cursor = connessione.cursor()
+"""
+scelta = azioni.Azioni()
 
 print("""
 Azioni disponibili:
@@ -26,36 +31,14 @@ Azioni disponibili:
 
 try:
     azione = input("Inserisci la tua scelta: ").capitalize()
-#print(f"'{azione}'")
+    #print(f"'{azione}'")
 except:
     print("Errore: I dati inseriti non sono corretti")
 
 if azione == "Registro":
-    print("Registro utente selezionato. ")
-
-    try:
-        regs_nome = input(f"Registra nome utente:")
-        regs_cognome = input(f"Registra cognome utente:")
-        regs_email = input(f"Registra email utente:")
-        regs_pwd = input(f"Registra password utente:")
-    except:
-        print("Errore: I dati inseriti non sono corretti")
-
-    print(f"""
-        Utente registrato:
-        -{regs_nome}
-        -{regs_cognome}
-        -{regs_email}
-    """)
+    scelta.registro()
 
 elif azione == "Login":
-    print("Login selezionato. Entra nel sistema: ")
+    scelta.login()
 
-    try:
-        log_email = input(f"Inserisci email utente:")
-        log_pwd = input(f"Inserisci password utente:")
-    except:
-        print("Errore: I dati inseriti non sono corretti")
-
-
-connessione.close()
+#connessione.close()
