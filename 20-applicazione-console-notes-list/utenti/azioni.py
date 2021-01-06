@@ -40,7 +40,7 @@ class Azioni:
                 -Email: {registro[1].email}
             """)
         else:
-            print(f"Non ti sei registrato correttamente")
+            print(f"Non ti sei registrato correttamente, alcuni dati non sono validi.")
 
 
     def login(self):
