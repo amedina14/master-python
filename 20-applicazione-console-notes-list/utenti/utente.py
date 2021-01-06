@@ -3,6 +3,7 @@ Connessione a DB e classe utente
 """
 import datetime
 import mysql.connector
+import hashlib
 
 database = mysql.connector.connect(
     host = "localhost",
@@ -25,8 +26,13 @@ class Utente:
     
     def registrare(self):
         data = datetime.datetime.now()
+
+        # codifica password
+        crittografia = hashlib.sha256()
+        crittografia.update(self.password.encode('utf-8'))
+
         sql = "INSERT INTO users VALUES (null, %s,%s,%s,%s,%s)"
-        user = (self.nome,self.cognome,self.email,self.password,data)
+        user = (self.nome,self.cognome,self.email,crittografia.hexdigest(),data)
 
         try:
             cursor.execute(sql,user)
