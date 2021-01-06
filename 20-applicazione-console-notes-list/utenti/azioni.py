@@ -1,3 +1,5 @@
+import utenti.utente as modello
+
 class Azioni:
 
     def registro(self):
@@ -24,12 +26,22 @@ class Azioni:
         except:
             print("Errore: I dati inseriti non sono corretti")
 
-        print(f"""
-            Utente registrato:
-            -{regs_nome}
-            -{regs_cognome}
-            -{regs_email}
-        """)
+        # Instanziare l'oggetto utente con i suoi dati
+        dati_utente = modello.Utente(regs_nome,regs_cognome,regs_email,regs_pwd)
+
+        # Applica il metodo della classe Utente
+        registro = dati_utente.registrare() 
+
+        # 'registrare' ritorna una lista[0,1]. L'indice 1 (self) contiene i dati del utente 
+        if registro[0] >= 1:
+            print(f"""
+                Ti sei registrato con successo 
+                -Nome: {registro[1].nome}
+                -Email: {registro[1].email}
+            """)
+        else:
+            print(f"Non ti sei registrato correttamente")
+
 
     def login(self):
         print("Login selezionato. Entra nel sistema: ")
