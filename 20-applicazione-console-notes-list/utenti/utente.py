@@ -28,10 +28,14 @@ class Utente:
         sql = "INSERT INTO users VALUES (null, %s,%s,%s,%s,%s)"
         user = (self.nome,self.cognome,self.email,self.password,data)
 
-        cursor.execute(sql,user)
-        database.commit()
+        try:
+            cursor.execute(sql,user)
+            database.commit()
+            result = [cursor.rowcount, self] # Ritorna il numero di righe interessate e i dati dell'oggetto utente
+        except:
+            result = [0, self] # Se errore il numero di righe di registro è pari a 0
 
-        return [cursor.rowcount, self] # Ritorna il numero di righe interessate
+        return result
     
     def autenticare(self):
         return self.nome
