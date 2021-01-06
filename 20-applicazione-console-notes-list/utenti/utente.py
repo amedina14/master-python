@@ -33,7 +33,7 @@ class Utente:
             database.commit()
             result = [cursor.rowcount, self] # Ritorna il numero di righe interessate e i dati dell'oggetto utente
         except:
-            result = [0, self] # Se errore il numero di righe di registro è pari a 0
+            result = [0, self] # Se errore il numero di righe di registro è pari a 0. (Esempio email ripetuta)
 
         return result
     
