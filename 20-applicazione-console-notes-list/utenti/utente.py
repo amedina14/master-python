@@ -2,21 +2,14 @@
 Connessione a DB e classe utente
 """
 import datetime
-import mysql.connector
 import hashlib
+import utenti.connessione as conn
 
-database = mysql.connector.connect(
-    host = "localhost",
-    user = "root",
-    passwd = "",
-    port = 3308,
-    database = "master_python"
-)
-#print(database)
-cursor = database.cursor(buffered=True)
+connect = conn.connettere()
+database = connect[0]
+cursor = connect[1]
 
 class Utente:
-
 
     def __init__(self, nome, cognome, email, password):
         self.nome = nome
