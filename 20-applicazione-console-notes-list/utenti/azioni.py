@@ -1,4 +1,4 @@
-import utenti.utente as modello
+from utenti import utente as modello
 
 class Azioni:
 
@@ -50,6 +50,26 @@ class Azioni:
             log_email = input(f"Inserisci email utente:")
             log_pwd = input(f"Inserisci password utente:")
             print()
-        except:
-            print("Errore: I dati inseriti non sono corretti")
 
+            user_data = modello.Utente('', '', log_email, log_pwd) # Oggetto del utente loggato
+            login = user_data.autenticare() # Ottiene tutti i dati del utente identificato
+
+            if log_email == login[3]:
+                print(f"Benvenuto {login[1]}, ti sei registrato il {login[5]}\n")
+                self.prossimeAzioni(login)
+
+        except Exception as e:
+            print(f"""
+            {type(e)}
+            {type(e).__name__}: Login incorretto. Riprova più tardi
+            """)
+
+    def prossimeAzioni(self, user_data):
+        print("""
+            Cosa vuoi fare:
+                -Crea nota
+                -Leggi nota
+                -Cancella nota
+                -Modifica nota
+        """)
+        return None 
