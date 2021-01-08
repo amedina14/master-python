@@ -6,7 +6,7 @@ id          int(25) auto_increment not null,
 nome        varchar(30) not null,
 cognome     varchar(30) not null,
 email       varchar(60) not null,
-password    varchar(60) not null,
+password    varchar(255) not null,
 data        date not null,
 CONSTRAINT pk_users PRIMARY KEY(id),
 CONSTRAINT uq_email UNIQUE(email)
