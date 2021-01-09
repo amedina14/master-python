@@ -56,7 +56,7 @@ class Azioni:
 
             if log_email == login[3]:
                 print(f"Benvenuto {login[1]}, ti sei registrato il {login[5]}\n")
-                self.prossimeAzioni(login)
+                self.prossimeAzioni(login) # Gli si passa i dati dell'utente
 
         except Exception as e:
             print(f"""
@@ -64,12 +64,32 @@ class Azioni:
             {type(e).__name__}: Login incorretto. Riprova più tardi
             """)
 
-    def prossimeAzioni(self, user_data):
+    def prossimeAzioni(self, user_data): # Gli passo l'oggetto
         print("""
             Cosa vuoi fare:
-                -Crea nota
-                -Leggi nota
-                -Cancella nota
-                -Modifica nota
+                -Crea nota (creare)
+                -Leggi note (leggi)
+                -Cancella nota (cancella)
+                -Uscire (esci)
         """)
-        return None 
+
+        azione = input("Quale azione vuoi fare? ")
+
+        if azione == "creare":
+            print("Hai selezionato creare nota:")
+            self.prossimeAzioni(user_data)
+            self.crea()
+
+        elif azione == "leggi":
+            print("Hai selezionato leggere nota:")
+            self.prossimeAzioni(user_data)
+            self.leggi()
+
+        elif azione == "cancella":
+            print("Hai selezionato cancella nota:")
+            self.prossimeAzioni(user_data)
+            self.cancella()
+
+        elif azione == "esci":
+            print(f"Okay {user_data[1]}. Alla prossima!")
+            exit()
