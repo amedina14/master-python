@@ -17,19 +17,14 @@ class Azione:
             print(type(e))
             print(f"{type(e).__name__}: Non è stata inserita alcuna nota.")
 
-    def leggi(self, utente):
+    def leggiNote(self, utente):
         try:
-            nome = input("\nInserisci il nome della nota")
+            autore_nota = modello.Nota(utente[0])
+            note_utente = autore_nota.listaNote()
 
-            nota = modello.Nota(utente[0], nome,'')
-            lettura = nota.leggereNota()
+            print(note_utente)
 
-            if nome == lettura[3]:
-                print(f"""
-                Titolo nota: {lettura[3]}.
-                Contenuto: {lettura[4]}.
-                """)
-            
+
         except Exception as e:
             print(f"""
             {type(e).__name__}: Non è stata trovata alcuna nota.
