@@ -56,7 +56,7 @@ class Azioni:
             utente_loggato = oggetto_utente.autenticare() # Ottiene tutti i dati del utente identificato
 
             if log_email == utente_loggato[3]:
-                print(f"Benvenuto {utente_loggato[1]}, ti sei registrato il {utente_loggato[5]}\n")
+                print(f"Benvenuto {utente_loggato[1]}, ti sei registrato il {utente_loggato[5]}")
                 self.prossimeAzioni(utente_loggato) # Gli si passa i dati dell'utente
 
         except Exception as e:
@@ -83,7 +83,8 @@ class Azioni:
             self.prossimeAzioni(dell_utente)
 
         elif azione_nota == "leggi":
-            print("Hai selezionato leggere nota:")
+            print(f"Hai selezionato leggi note, ecco i tuoi appunti {dell_utente[1]}:")
+            oggetto_azioneNota.leggiNote(dell_utente)
             self.prossimeAzioni(dell_utente)
 
         elif azione_nota == "cancella":
