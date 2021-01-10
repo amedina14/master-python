@@ -22,8 +22,24 @@ class Azione:
             autore_nota = modello.Nota(utente[0])
             note_utente = autore_nota.listaNote()
 
-            print(note_utente)
+            #print(note_utente)
 
+            for nota in note_utente:
+                print("\n****************************************************")
+                for dato in nota:
+                    if nota.index(dato) == 2:
+                        print(f"Titulo: {dato}")
+                    elif nota.index(dato) == 3:
+                        print(f"Contenuto:\n{dato}")
+                    #print(dato)
+                print("****************************************************")
+
+            """
+            for nota in note_utente:
+                print("**************************")
+                print(nota[2])
+                print(nota[3])
+            """
 
         except Exception as e:
             print(f"""
