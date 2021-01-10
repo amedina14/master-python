@@ -21,7 +21,7 @@ class Nota:
         #data = datetime.datetime.now()
 
         sql = "INSERT INTO notes VALUES (null, %s, %s, %s, NOW())"
-        dati = (self.utente_id, self.titolo,self.contenuto)
+        dati = (self.utente_id, self.titolo, self.contenuto)
 
         try:
             cursor.execute(sql,dati)
