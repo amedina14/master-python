@@ -12,7 +12,7 @@ cursor = connect[1]
 
 class Nota:
 
-    def __init__(self, utente_id, titolo, contenuto):
+    def __init__(self, utente_id, titolo="", contenuto=""): # Rendere paramteri opzionali con (="")
         self.utente_id = utente_id
         self.titolo = titolo
         self.contenuto = contenuto
@@ -32,18 +32,14 @@ class Nota:
 
         return result
 
-    def leggereNota(self):
+    def listaNote(self):
 
-        sql = "SELECT * FROM notes WHERE titulo = %s"
-        dati = (self.titolo,)
+        sql = f"SELECT * FROM notes WHERE user_id = {self.utente_id}"
 
-        cursor.execute(sql,dati)
-        nota = cursor.fetchone()
-        for dato in nota:
-            print(dato)
-            print()
+        cursor.execute(sql)
+        note_utente = cursor.fetchall()
         
-        return nota
+        return note_utente
 
     def cancellaNota(self):
 
