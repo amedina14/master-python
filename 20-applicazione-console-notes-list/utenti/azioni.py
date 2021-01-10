@@ -1,4 +1,5 @@
 from utenti import utente as modello
+from note import azione
 
 class Azioni:
 
@@ -51,12 +52,12 @@ class Azioni:
             log_pwd = input(f"Inserisci password utente:")
             print()
 
-            user_data = modello.Utente('', '', log_email, log_pwd) # Oggetto del utente loggato
-            login = user_data.autenticare() # Ottiene tutti i dati del utente identificato
+            oggetto_utente = modello.Utente('', '', log_email, log_pwd) # Oggetto del utente loggato
+            utente_loggato = oggetto_utente.autenticare() # Ottiene tutti i dati del utente identificato
 
-            if log_email == login[3]:
-                print(f"Benvenuto {login[1]}, ti sei registrato il {login[5]}\n")
-                self.prossimeAzioni(login) # Gli si passa i dati dell'utente
+            if log_email == utente_loggato[3]:
+                print(f"Benvenuto {utente_loggato[1]}, ti sei registrato il {utente_loggato[5]}\n")
+                self.prossimeAzioni(utente_loggato) # Gli si passa i dati dell'utente
 
         except Exception as e:
             print(f"""
@@ -64,7 +65,7 @@ class Azioni:
             {type(e).__name__}: Login incorretto. Riprova più tardi
             """)
 
-    def prossimeAzioni(self, user_data): # Gli passo l'oggetto
+    def prossimeAzioni(self, dell_utente): # Gli passo l'oggetto
         print("""
             Cosa vuoi fare:
                 -Crea nota (creare)
@@ -73,23 +74,22 @@ class Azioni:
                 -Uscire (esci)
         """)
 
-        azione = input("Quale azione vuoi fare? ")
+        azione_nota = input("Quale azione vuoi fare? ")
+        oggetto_azioneNota = azione.Azione()
 
-        if azione == "creare":
+        if azione_nota == "creare":
             print("Hai selezionato creare nota:")
-            self.prossimeAzioni(user_data)
-            self.crea()
+            oggetto_azioneNota.crea(dell_utente)
+            self.prossimeAzioni(dell_utente)
 
-        elif azione == "leggi":
+        elif azione_nota == "leggi":
             print("Hai selezionato leggere nota:")
-            self.prossimeAzioni(user_data)
-            self.leggi()
+            self.prossimeAzioni(dell_utente)
 
-        elif azione == "cancella":
+        elif azione_nota == "cancella":
             print("Hai selezionato cancella nota:")
-            self.prossimeAzioni(user_data)
-            self.cancella()
+            self.prossimeAzioni(dell_utente)
 
-        elif azione == "esci":
-            print(f"Okay {user_data[1]}. Alla prossima!")
+        elif azione_nota == "esci":
+            print(f"Okay {dell_utente[1]}. Alla prossima!")
             exit()
