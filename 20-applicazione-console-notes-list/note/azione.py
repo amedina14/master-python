@@ -9,7 +9,7 @@ class Azione:
             contenuto = input("\nInserisci contenuto della nota:\n")
 
             nota = modello.Nota(utente[0], titolo, contenuto)
-            creazione = modello.creareNota()
+            creazione = nota.creareNota()
 
             if creazione[0] >= 1:
                 print(f"E' stata inserita la nota {nota.titolo}")
