@@ -89,6 +89,7 @@ class Azioni:
 
         elif azione_nota == "cancella":
             print("Hai selezionato cancella nota:")
+            oggetto_azioneNota.cancella(dell_utente)
             self.prossimeAzioni(dell_utente)
 
         elif azione_nota == "esci":
