@@ -1,6 +1,10 @@
 """
 Tkinter
 Modulo di python per creare interfacce grafiche di utenti
+
+CURIOSITA'
+Se si cambia l'estensione del file python da py > pyw, il programma si esegue in modo window (finestra),
+cioè eseguirà solo il risultato.
 """
 import os.path # as pathlib
 from tkinter import *
