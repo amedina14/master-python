@@ -15,7 +15,7 @@ CONSTRAINT uq_email UNIQUE(email)
 CREATE TABLE IF NOT EXISTS notes(
 id          int(25) auto_increment not null,
 user_id     int(25) not null,
-titulo      varchar(30) not null,
+titolo      varchar(30) not null,
 contenuto   MEDIUMTEXT,
 data        date not null,
 CONSTRAINT pk_users PRIMARY KEY(id),
