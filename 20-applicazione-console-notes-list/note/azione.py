@@ -50,10 +50,10 @@ class Azione:
         try:
             titolo = input("Inserisci nota da cancellare:")
 
-            nota = modello.Nota(utente[0], titolo,'')
-            cancellazione = modello.cancella()
+            nota = modello.Nota(utente[0], titolo)
+            cancellazione = nota.cancellaNota()
 
-            if titolo == cancellazione[3]:
+            if cancellazione[0] >= 1:
                 print(f"""
                 Nota '{titolo}' cancellata.
                 """)
