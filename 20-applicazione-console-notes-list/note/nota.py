@@ -43,11 +43,10 @@ class Nota:
 
     def cancellaNota(self):
 
-        sql = "DELETE FROM notes WHERE titolo = %s"
-        dati = (self.titolo,)
+        sql = f"DELETE FROM notes WHERE user_id = {self.utente_id} AND titolo LIKE '%{self.titolo}%'"
 
         try:
-            cursor.execute(sql,dati)
+            cursor.execute(sql)
             database.commit()
             result = [cursor.rowcount, self]
         except:
