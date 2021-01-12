@@ -25,16 +25,24 @@ testo.config(
 )
 testo.pack(anchor=E)
 
-testo = Label(finestra, text="Testo del west")
+def params(name, surname, country):
+    return f" Hello {name} {surname} born in {country}"
+
+"""
+"""
+nome = "Adrian"
+cognome = "Medina"
+nazione = "Ecuador"
+testo = Label(finestra, text=params(surname=cognome, country=nazione, name=nome)) # Keywords arguments parameters allows any order
 testo.config(
     heigh=1,
     fg="white",
-    bg="red",
+    bg="green",
     font=("Consolas",10),
     padx=10,
     pady=20,
     cursor="spider" # spider, circle, etc
 )
-testo.pack(ANCHOR=W)
+testo.pack(anchor=W)
 
 finestra.mainloop()
