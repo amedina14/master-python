@@ -8,7 +8,7 @@ pip install --upgrade Pillow
 """
 
 finestra = Tk()
-finestra.geometry("650x450")
+#finestra.geometry("650x450")
 
 label1 = Label(finestra, text="VENV Inserire immagini dentro del programma:").pack(anchor=W)
 
