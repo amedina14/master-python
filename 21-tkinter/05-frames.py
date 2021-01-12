@@ -19,6 +19,10 @@ frame.config(
     relief=SOLID
 )
 frame.pack(side=LEFT, anchor=NW)
+frame.pack_propagate(False)
+
+testo = Label(frame, text="Prova test text")
+testo.pack(side=LEFT,anchor=CENTER)
 
 frame = Frame(major_frame, width=250, heigh=250)
 frame.config(
