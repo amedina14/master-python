@@ -20,31 +20,46 @@ header.config(
 header.grid(row=0, column=0, columnspan=12, sticky=W) # pack(side=LEFT, anchor=NW) # fill=Y, expand=YES
 
 # Label
-lbl_text = Label(finestra, text="Label form example")
-lbl_text.grid(row=1, column=0, padx=5, pady=5)
+lbl_nome = Label(finestra, text="Label form example")
+lbl_nome.grid(row=1, column=0, padx=5, pady=5)
 
 # Textbox
-text_in = Entry(finestra)
-text_in.grid(row=1, column=1, sticky=W, padx=5, pady=5)
-text_in.config(justify="right", state="normal")
+text_in_nome = Entry(finestra)
+text_in_nome.grid(row=1, column=1, sticky=W, padx=5, pady=5)
+text_in_nome.config(justify="right", state="normal")
 
 # Label cognome
-lbl_text = Label(finestra, text="Cognome")
-lbl_text.grid(row=2, column=0, padx=5, pady=5)
+lbl_cogn = Label(finestra, text="Cognome")
+lbl_cogn.grid(row=2, column=0, padx=5, pady=5)
 
 # Textbox cognome
-text_in = Entry(finestra)
-text_in.grid(row=2, column=1, sticky=W, padx=5, pady=5)
-text_in.config(justify="center", state="normal")
+text_in_cognome = Entry(finestra)
+text_in_cognome.grid(row=2, column=1, sticky=W, padx=5, pady=5)
+text_in_cognome.config(justify="center", state="normal")
 
 # Label DEPOSITO
-lbl_text = Label(finestra, text="Deposito $$")
-lbl_text.grid(row=3, column=0, padx=5, pady=5)
+lbl_dep = Label(finestra, text="Deposito $$")
+lbl_dep.grid(row=3, column=0, padx=5, pady=5)
 
 # Textbox DEPOSITO
-text_in = Entry(finestra)
-text_in.grid(row=3, column=1, sticky=W, padx=5, pady=5)
-text_in.config(justify="left", state="disabled")
+text_in_deposito = Entry(finestra)
+text_in_deposito.grid(row=3, column=1, sticky=W, padx=5, pady=5)
+text_in_deposito.config(justify="left", state="disabled")
 
+
+# Label descrizione
+lbl_desc = Label(finestra, text="Descrizione")
+lbl_desc.grid(row=4, column=0, sticky=N, padx=5, pady=5)
+
+# Textbox descrizione (TEXTAREA o campo di testo grande)
+descrizione = Text(finestra)
+descrizione.grid(row=4, column=1, sticky=W, padx=5, pady=5)
+descrizione.config(
+    width=30,
+    height=5,
+    font=("Aria",12),
+    padx=15,
+    pady=15
+)
 
 finestra.mainloop()
