@@ -10,7 +10,8 @@ def mostrareAlerta():
     MessageBox.showerror("Non ti buttare giù", "Con determinazione e perseveranza puoi risolvere gli errori")
     # return True
 
-# perche il command funzioni correttamente bisogna invocarlo senza parentesi
+# Perche il commando funzioni correttamente bisogna invocarlo senza parentesi
+# Altrimenti bisogna usare funzoni lambda per passare parametri
 Button(finestra, text="Mostra alerta!", command=mostrareAlerta).pack() 
 
 
