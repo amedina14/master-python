@@ -12,6 +12,13 @@ finestra.config(
 def stampaDato():
     datoRisultante.set(datoRaccolto.get())
 
+    if len(datoRisultante.get()) >= 1:
+        dato_stampato.config(
+            bg="navy",
+            fg="#00FF00"
+        )
+
+
 datoRaccolto = StringVar()
 datoRisultante = StringVar()
 
@@ -22,10 +29,6 @@ Entry(finestra, textvariable=datoRaccolto).pack(anchor=NW)
 # Mostra dato
 Label(finestra, text="Dato inserito").pack(anchor=NW)
 dato_stampato = Label(finestra, textvariable=datoRisultante)
-dato_stampato.config(
-    bg="navy",
-    fg="#00FF00"
-)
 dato_stampato.pack(anchor=NW)
 
 # Submit
