@@ -15,14 +15,14 @@ Button(finestra, text="Mostra alerta!", command=mostrareAlerta).pack()
 
 
 # Chiede se uscire
-def uscire():
+def uscire(nome):
     result = MessageBox.askquestion("Uscire", "Vuoi continuare con il programma?")
-    #result = MessageBox.askquestion("Uscire", "Sei sicuro di voler uscire?")
 
     if result != "yes": # Come configurazione questa funzione accetta 'yes' o 'no'
+        MessageBox.showinfo("info", f"Ciao e arrivederci {nome}")
         finestra.destroy()
 
-Button(finestra, text="Esci", command=uscire).pack() 
+Button(finestra, text="Esci", command=lambda: uscire("Adrian")).pack() 
 
 
 finestra.mainloop()
