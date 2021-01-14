@@ -19,11 +19,11 @@ header.config(
 )
 header.grid(row=0, column=0, columnspan=12, sticky=W) # pack(side=LEFT, anchor=NW) # fill=Y, expand=YES
 
-# Label
-lbl_nome = Label(finestra, text="Label form example")
+# Label nome
+lbl_nome = Label(finestra, text="Nome")
 lbl_nome.grid(row=1, column=0, padx=5, pady=5)
 
-# Textbox
+# Textbox nome
 text_in_nome = Entry(finestra)
 text_in_nome.grid(row=1, column=1, sticky=W, padx=5, pady=5)
 text_in_nome.config(justify="right", state="normal")
@@ -61,5 +61,17 @@ descrizione.config(
     padx=15,
     pady=15
 )
+
+# Bottoni 
+Label(finestra).grid(row=5, column=1) # riga di spazio 
+bottone1 = Button(finestra, text="Submit")
+bottone1.grid(row=6, column=1, sticky=W)
+bottone1.config(
+    padx=15,
+    pady=5,
+    fg="orange",
+    bg="navy"
+)
+
 
 finestra.mainloop()
