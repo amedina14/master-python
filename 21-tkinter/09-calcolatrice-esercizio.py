@@ -12,23 +12,31 @@ finestra.geometry("700x450")
 finestra.config(bd="25")
 finestra.title("Calcolatrice")
 
+def converteFloat(numero):
+    try:
+        result = float(numero)
+    except:
+        result = 0
+        messagebox.showerror("Error","Inseriscei i dat  i correttamente")
+    return result
+
 def somma(val1, val2):
-    risultato.set(float(val1.get()) + float(val2.get()))
+    risultato.set(converteFloat(val1.get()) + converteFloat(val2.get()))
     mostraRisultato()
     #return result
 
 def resta(val1, val2):
-    risultato.set(float(val1.get()) - float(val2.get()))
+    risultato.set(converteFloat(val1.get()) - converteFloat(val2.get()))
     mostraRisultato()
     #return result
 
 def molt(val1, val2):
-    risultato.set(float(val1.get()) * float(val2.get()))
+    risultato.set(converteFloat(val1.get()) * converteFloat(val2.get()))
     mostraRisultato()
     #return result
 
 def div(val1, val2):
-    risultato.set(float(val1.get()) / float(val2.get()))
+    risultato.set(converteFloat(val1.get()) / converteFloat(val2.get()))
     mostraRisultato()
     #return result
 
