@@ -1,7 +1,7 @@
 from tkinter import *
 
 finestra = Tk()
-finestra.geometry("800x300")
+finestra.geometry("700x400")
 finestra.title("Header del form")
 
 header = Label(finestra, text="Header")
@@ -214,7 +214,34 @@ mostra = Label(finestra)
 mostra.grid(row=6,column=0) #pack(side=TOP, anchor=NW)
 
 # Radio Buttons
+def op_genere():
+    mostra_genere.config(
+        text=opzione.get()
+    )
 
+opzione = StringVar()
+opzione.set(None)
+
+lbl_genere = Label(finestra, text="Di che genere sei?")
+lbl_genere.grid(row=7,column=0)
+Radiobutton(
+    finestra,
+    text="Maschio",
+    value="Maschio",
+    variable=opzione,
+    command=op_genere,
+).grid(row=8,column=0)
+
+Radiobutton(
+    finestra,
+    text="Femmina",
+    value="Femmina",
+    variable=opzione,
+    command=op_genere,
+).grid(row=9,column=0)
+
+mostra_genere = Label(finestra)
+mostra_genere.grid(row=10,column=0)
 
 # Option Menu
 
