@@ -5,7 +5,7 @@ Creare un programma che abbia:
  (fatto) - No ridimensionabile
  (fatto) - Un menu: Inizio, Aggiungere, Informazione, Uscire.
  (fatto) - Opzione di uscire
-- Diverse schermate
+ (fatto) - Diverse schermate
 - Form di aggiungere prodotti
 - Salvare i dati temporalmente
 - Stampa elenco dati nella schermata home
@@ -16,7 +16,7 @@ from tkinter import *
 
 # Defining window
 finestra = Tk()
-finestra.geometry("600x500")
+finestra.geometry("500x500")
 finestra.title("Progetto tkinter python")
 finestra.resizable(0,0)
 
@@ -26,7 +26,7 @@ def home():
         fg="white",
         bg="black",
         font=("Arial",30),
-        padx=20,
+        padx=195,
         pady=20
     )
     lbl_home.grid(row=0,column=0)
@@ -42,10 +42,13 @@ def addProduct():
         fg="white",
         bg="green",
         font=("Consolas", 30),
-        padx=20,
+        padx=171,
         pady=20,
     )
-    lbl_product.grid(row=0,column=0)
+    lbl_product.grid(row=0,column=0,columnspan=10) # Columnspan: Stabilisce di quante colonne è composta la griglia
+    
+    lbl_add_name_product.grid(row=1, column=0, padx=5, pady=5, sticky=E)
+    entry_name_product.grid(row=1, column=1, padx=5, pady=5, sticky=W)
 
     lbl_home.grid_remove()
     lbl_info.grid_remove()
@@ -58,7 +61,7 @@ def Information():
         fg="white",
         bg="blue",
         font=("Times new romans", 30),
-        padx=20,
+        padx=150,
         pady=20,
     )
     lbl_info.grid(row=0,column=0)
@@ -77,12 +80,25 @@ def Information():
 
     return True
 
+# Variabili importanti
+nomeProdotto = StringVar()
+prezzoProdotto = IntVar()
 
 # Defining fields (Home)
 lbl_home = Label(finestra, text="Home")
 
 # Defining fields (addProduct)
 lbl_product = Label(finestra, text="Product")
+
+# Campi del form product
+lbl_add_name_product = Label(finestra, text="Name: ")
+entry_name_product = Entry(finestra, textvariable=nomeProdotto)
+
+lbl_add_price_product = Label(finestra, text="Prezzo: ")
+entry_price_product = Entry(finestra, textvariable=prezzoProdotto)
+
+lbl_add_description_product = Label(finestra, text="Descrizione: ")
+entry_description_product = Text(finestra)
 
 # Defining fields (Information)
 lbl_info = Label(finestra, text="Information")
