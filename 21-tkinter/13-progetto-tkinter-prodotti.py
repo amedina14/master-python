@@ -16,7 +16,8 @@ from tkinter import *
 
 # Defining window
 finestra = Tk()
-finestra.geometry("500x500")
+#finestra.geometry("500x500")
+finestra.minsize(500,500)
 finestra.title("Progetto tkinter python")
 finestra.resizable(0,0)
 
@@ -93,6 +94,7 @@ def addProduct():
     bottone.grid(row=5,column=1,sticky=E)
 
     # Nascondere le altre pagine
+    product_box.grid_remove()
     lbl_home.grid_remove()
     lbl_info.grid_remove()
     data_info.grid_remove()
