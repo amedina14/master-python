@@ -13,6 +13,7 @@ Creare un programma che abbia:
 """
 
 from tkinter import *
+from tkinter import ttk
 
 # Defining window
 finestra = Tk()
@@ -32,18 +33,25 @@ def home():
     )
     lbl_home.grid(row=0,column=0)
 
-    # Carica frame prodotti
-    product_box.grid(row=1)
+    # Carica tabella prodotti / frame prodotti
+    product_box.grid(row=2) # ,column=0,columspan=3
 
     # Lista i prodotti
+    """
     lbl_stampa_prodotti.grid(row=1,column=0,padx=5,pady=5)
+    """
     for i in prodotti:
         if len(i) == 3: # i contiene 3 campos: nome, prezzo, desc.
             i.append("added")
+            product_box.insert('',0,text=i[0],values=(i[1],i[2])) #,values=(i[1],i[2])
+
+            """
             Label(product_box, text=f"Nome: {i[0]}").grid()
             Label(product_box, text=f"Prezzo: {i[1]}").grid()
             Label(product_box, text=f"Descrizione: {i[2]}").grid()
             Label(product_box, text=f"-------------------").grid()
+            """
+
         """
         lbl_risultato_prodotti.config(
             text=i
@@ -151,8 +159,17 @@ prezzoProdotto = IntVar()
 
 # Defining fields (Home)
 lbl_home = Label(finestra, text="Home")
+"""
 product_box = Frame(finestra, width=250, height=100)
 lbl_stampa_prodotti = Label(product_box, text="Prodotti:")
+#product_box.grid(row=1,column=0,columnspan=2)
+"""
+Label(finestra).grid(row=1)
+# Nome viene usato come PK(#0), per questo non viene inserito nella tupla delle colonne
+product_box = ttk.Treeview(height=12,columns=("prezzo","descrizione")) #"prezzo",
+product_box.heading("#0",text="Nome",anchor=CENTER)
+product_box.heading("#1",text="Prezzo",anchor=CENTER)
+product_box.heading("#2",text="Descrizione",anchor=W)
 
 # Defining fields (addProduct)
 lbl_product = Label(finestra, text="Product")
