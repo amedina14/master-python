@@ -40,7 +40,7 @@ def home():
 def addProduct():
     lbl_product.config(
         fg="white",
-        bg="green",
+        bg="#2F4F4F",
         font=("Consolas", 30),
         padx=171,
         pady=20,
@@ -50,6 +50,26 @@ def addProduct():
     lbl_add_name_product.grid(row=1, column=0, padx=5, pady=5, sticky=E)
     entry_name_product.grid(row=1, column=1, padx=5, pady=5, sticky=W)
 
+    lbl_add_price_product.grid(row=2, column=0, padx=5, pady=5, sticky=E)
+    entry_price_product.grid(row=2, column=1, padx=5, pady=5, sticky=W)
+
+    lbl_add_description_product.grid(row=3,column=0,padx=5,pady=5,sticky=N)
+    entry_description_product.grid(row=3,column=1,padx=5,pady=5,sticky=W)
+    entry_description_product.config(
+        width=30,
+        height=5,
+        font=("consolas",12),
+        padx=15,
+        pady=15
+    )
+
+    # Linea di spazio separatrice
+    add_separator.grid(row=4)
+
+    bottone.config(padx=15,pady=5,bg="green",fg="white")
+    bottone.grid(row=5,column=1,sticky=E)
+
+    # Nascondere le altre pagine
     lbl_home.grid_remove()
     lbl_info.grid_remove()
     data_info.grid_remove()
@@ -99,6 +119,9 @@ entry_price_product = Entry(finestra, textvariable=prezzoProdotto)
 
 lbl_add_description_product = Label(finestra, text="Descrizione: ")
 entry_description_product = Text(finestra)
+
+add_separator = Label(finestra)
+bottone = Button(finestra, text="Invio")
 
 # Defining fields (Information)
 lbl_info = Label(finestra, text="Information")
