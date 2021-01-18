@@ -31,6 +31,26 @@ def home():
     )
     lbl_home.grid(row=0,column=0)
 
+    # Carica frame prodotti
+    product_box.grid(row=1)
+
+    # Lista i prodotti
+    lbl_stampa_prodotti.grid(row=1,column=0,padx=5,pady=5)
+    for i in prodotti:
+        if len(i) == 3: # i contiene 3 campos: nome, prezzo, desc.
+            i.append("added")
+            Label(product_box, text=f"Nome: {i[0]}").grid()
+            Label(product_box, text=f"Prezzo: {i[1]}").grid()
+            Label(product_box, text=f"Descrizione: {i[2]}").grid()
+            Label(product_box, text=f"-------------------").grid()
+        """
+        lbl_risultato_prodotti.config(
+            text=i
+        )
+        lbl_risultato_prodotti.grid(row=1,column=1,padx=5,pady=5,sticky=W)
+        """
+
+    # Rimuove altre pagine
     lbl_product.grid_remove()
     lbl_info.grid_remove()
     data_info.grid_remove()
@@ -98,6 +118,8 @@ def Information():
     )
     data_info.grid(row=1,column=0)
 
+    # Rimuovere le altre pagine
+    product_box.grid_remove()
     lbl_home.grid_remove()
     lbl_product.grid_remove()
     add_product_frame.grid_remove()
@@ -111,6 +133,7 @@ def saveProduct():
         # Parametri speciali obbligatori per ottenere i dati dal Textarea .get("1.0","end-1c")
         entry_description_product.get("1.0","end-1c") 
     ])
+    # Svuota campi dopo averli inviati
     nomeProdotto.set("")
     prezzoProdotto.set("")
     entry_description_product.delete("1.0",END)
@@ -126,6 +149,8 @@ prezzoProdotto = IntVar()
 
 # Defining fields (Home)
 lbl_home = Label(finestra, text="Home")
+product_box = Frame(finestra, width=250, height=100)
+lbl_stampa_prodotti = Label(product_box, text="Prodotti:")
 
 # Defining fields (addProduct)
 lbl_product = Label(finestra, text="Product")
