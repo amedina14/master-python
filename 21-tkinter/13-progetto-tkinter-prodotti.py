@@ -34,6 +34,7 @@ def home():
     lbl_product.grid_remove()
     lbl_info.grid_remove()
     data_info.grid_remove()
+    add_product_frame.grid_remove()
 
     return True
 
@@ -47,6 +48,8 @@ def addProduct():
     )
     lbl_product.grid(row=0,column=0,columnspan=10) # Columnspan: Stabilisce di quante colonne è composta la griglia
     
+    # Campi del form
+    add_product_frame.grid(row=1) # Mostra frame
     lbl_add_name_product.grid(row=1, column=0, padx=5, pady=5, sticky=E)
     entry_name_product.grid(row=1, column=1, padx=5, pady=5, sticky=W)
 
@@ -97,6 +100,7 @@ def Information():
 
     lbl_home.grid_remove()
     lbl_product.grid_remove()
+    add_product_frame.grid_remove()
 
     return True
 
@@ -111,17 +115,19 @@ lbl_home = Label(finestra, text="Home")
 lbl_product = Label(finestra, text="Product")
 
 # Campi del form product
-lbl_add_name_product = Label(finestra, text="Name: ")
-entry_name_product = Entry(finestra, textvariable=nomeProdotto)
+add_product_frame = Frame(finestra)
 
-lbl_add_price_product = Label(finestra, text="Prezzo: ")
-entry_price_product = Entry(finestra, textvariable=prezzoProdotto)
+lbl_add_name_product = Label(add_product_frame, text="Name: ")
+entry_name_product = Entry(add_product_frame, textvariable=nomeProdotto)
 
-lbl_add_description_product = Label(finestra, text="Descrizione: ")
-entry_description_product = Text(finestra)
+lbl_add_price_product = Label(add_product_frame, text="Prezzo: ")
+entry_price_product = Entry(add_product_frame, textvariable=prezzoProdotto)
 
-add_separator = Label(finestra)
-bottone = Button(finestra, text="Invio")
+lbl_add_description_product = Label(add_product_frame, text="Descrizione: ")
+entry_description_product = Text(add_product_frame)
+
+add_separator = Label(add_product_frame)
+bottone = Button(add_product_frame, text="Invio")
 
 # Defining fields (Information)
 lbl_info = Label(finestra, text="Information")
