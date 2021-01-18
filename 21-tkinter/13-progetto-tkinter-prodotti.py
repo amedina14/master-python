@@ -6,8 +6,8 @@ Creare un programma che abbia:
  (fatto) - Un menu: Inizio, Aggiungere, Informazione, Uscire.
  (fatto) - Opzione di uscire
  (fatto) - Diverse schermate
-- Form di aggiungere prodotti
-- Salvare i dati temporalmente
+ (fatto) - Form di aggiungere prodotti
+ (fatto) - Salvare i dati temporalmente
 - Stampa elenco dati nella schermata home
 
 """
@@ -104,9 +104,25 @@ def Information():
 
     return True
 
+def saveProduct():
+    prodotti.append([
+        nomeProdotto.get(),
+        prezzoProdotto.get(),
+        # Parametri speciali obbligatori per ottenere i dati dal Textarea .get("1.0","end-1c")
+        entry_description_product.get("1.0","end-1c") 
+    ])
+    nomeProdotto.set("")
+    prezzoProdotto.set("")
+    entry_description_product.delete("1.0",END)
+
+    print(prodotti)
+    home()
+
 # Variabili importanti
+prodotti = []
 nomeProdotto = StringVar()
 prezzoProdotto = IntVar()
+#descrizione = StringVar()
 
 # Defining fields (Home)
 lbl_home = Label(finestra, text="Home")
@@ -127,7 +143,7 @@ lbl_add_description_product = Label(add_product_frame, text="Descrizione: ")
 entry_description_product = Text(add_product_frame)
 
 add_separator = Label(add_product_frame)
-bottone = Button(add_product_frame, text="Invio")
+bottone = Button(add_product_frame, text="Invio", command=saveProduct)
 
 # Defining fields (Information)
 lbl_info = Label(finestra, text="Information")
@@ -135,6 +151,8 @@ data_info = Label(finestra, text="Created by Adrian Medina, 2021")
 
 # Creates toolbar
 toolbar = Menu(finestra)
+
+home()
 
 # Defining toolbar
 toolbar.add_command(label="Inizio",command=home)
