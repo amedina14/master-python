@@ -16,6 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+# Importare la mia app con le viste(controller)
+from myapp import views
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('ciao-mondo/', views.ciao_mondo, name='ciao_mondo')
 ]
