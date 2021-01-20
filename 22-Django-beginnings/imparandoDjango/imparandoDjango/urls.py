@@ -17,9 +17,13 @@ from django.contrib import admin
 from django.urls import path
 
 # Importare la mia app con le viste(controller)
+# import myapp.views # Maniera consigliata quando ci sono tante app
 from myapp import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('ciao-mondo/', views.ciao_mondo, name='ciao_mondo')
+    path('', views.inizio, name='index'),
+    path('inizio/', views.inizio, name='inizio'),
+    path('ciao-mondo/', views.ciao_mondo, name='ciao_mondo'),
+    path('pagina-prova/', views.pagina, name='pagina'),
 ]
