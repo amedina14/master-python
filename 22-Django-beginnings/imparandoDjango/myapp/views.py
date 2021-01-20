@@ -15,9 +15,23 @@ Per visualizzare i risultati dei metodi, bisogna stabilirgli le url: urls.py
 """
 
 def inizio(request):
-    return HttpResponse("""
+
+    html = """
     <h1>Inizio</h1>
-    """)
+    <p>Anni fino al 2050:</p>
+    <ul>
+    """
+    year = 2021
+
+    #for i in range(year,2051):
+    while year <= 2051:
+        if year % 2 == 0:
+            html += f"<li>{str(year)}</li>"
+        year += 1
+
+    html += "</ul>"
+
+    return HttpResponse(html)
 
 def ciao_mondo(request):
     return HttpResponse("""
