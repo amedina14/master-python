@@ -52,10 +52,15 @@ def inizio(request):
     return HttpResponse(layout + html)
 
 def ciao_mondo(request):
-    return HttpResponse(layout + """
+    
+    # Render sa che deve prendere la vista dentro della cartella templates
+    return render(request, 'ciao_mondo.html')
+
+    #return HttpResponse(layout + 
+    """
     <h1>Home</h1>
     Ciao mondo con Django!!
-    """)
+    """#)
 
 def pagina(request, reindirizzare=0):
 
