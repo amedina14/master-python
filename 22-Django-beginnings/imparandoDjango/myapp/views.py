@@ -63,7 +63,23 @@ def pagina(request):
     <h2>Sviluppatore python web django</h2>
     """)
 
-def contatto(request, nome, cognome):
-    return HttpResponse(layout + f"""
-    <h2>Contatto: {nome} {cognome}</h2>
-    """)
+def contatto(request, nome="", cognome=""): # rendere opzionale con ' ="" '
+
+    html = "<h2>Contatto: </h2>"
+
+    if nome and cognome:
+        html += "<p>Il nome completo è: </p>"
+        html += f"""
+        <h3>{nome} {cognome}</h3>
+        """
+    elif nome or cognome:
+        if nome:
+            html += f"""<p><b>Il nome è:</b></p>
+            <p>{nome}</p>"""
+        else:
+            html += f"Il cognome è: {cognome}"
+    else:
+        html += f"<h3>Vuoto</h3>"
+
+
+    return HttpResponse(layout + html)
