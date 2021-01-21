@@ -21,6 +21,7 @@ layout = """
 <li><a href="/inizio">Inizio</a></li>
 <li><a href="/ciao-mondo">Ciao mondo</a></li>
 <li><a href="/pagina-prova">Pagina prova</a></li>
+<li><a href="/contatto">Contatto</a></li>
 </ul>
 <hr/>
 """
@@ -60,4 +61,9 @@ def pagina(request):
     return HttpResponse(layout + """
     <h1>Adrian Medina</h1>
     <h2>Sviluppatore python web django</h2>
+    """)
+
+def contatto(request, nome, cognome):
+    return HttpResponse(layout + f"""
+    <h2>Contatto: {nome} {cognome}</h2>
     """)
