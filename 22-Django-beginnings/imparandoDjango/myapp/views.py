@@ -14,6 +14,17 @@ Per visualizzare i risultati dei metodi, bisogna stabilirgli le url: urls.py
 
 """
 
+layout = """
+<h1>Layout html</h1>
+<h2>Sottotitulo | Lista links:</h2>
+<ul>
+<li><a href="/inizio">Inizio</a></li>
+<li><a href="/ciao-mondo">Ciao mondo</a></li>
+<li><a href="/pagina-prova">Pagina prova</a></li>
+</ul>
+<hr/>
+"""
+
 def inizio(request):
 
     html = """
@@ -37,16 +48,16 @@ def inizio(request):
 
     html += "</ul>"
 
-    return HttpResponse(html)
+    return HttpResponse(layout + html)
 
 def ciao_mondo(request):
-    return HttpResponse("""
+    return HttpResponse(layout + """
     <h1>Home</h1>
     Ciao mondo con Django!!
     """)
 
 def pagina(request):
-    return HttpResponse("""
+    return HttpResponse(layout + """
     <h1>Adrian Medina</h1>
     <h2>Sviluppatore python web django</h2>
     """)
