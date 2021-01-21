@@ -1,4 +1,4 @@
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import render, HttpResponse, redirect
 
 # Create your views here.
 # MVC = Modello Vista Controller => Azioni (metodi) 
@@ -21,7 +21,7 @@ layout = """
 <li><a href="/inizio">Inizio</a></li>
 <li><a href="/ciao-mondo">Ciao mondo</a></li>
 <li><a href="/pagina-prova">Pagina prova</a></li>
-<li><a href="/contatto">Contatto</a></li>
+<li><a href="/contatto-pag">Contatto</a></li>
 </ul>
 <hr/>
 """
@@ -57,7 +57,11 @@ def ciao_mondo(request):
     Ciao mondo con Django!!
     """)
 
-def pagina(request):
+def pagina(request, reindirizzare=0):
+
+    if reindirizzare == 1:
+        return redirect('contatto', nome="Adrian", cognome="Medina") #redirect("/contatto-pag/Adrian/Medina") #redirect('contatto', name="Adrian", cognome="Medina")
+
     return HttpResponse(layout + """
     <h1>Adrian Medina</h1>
     <h2>Sviluppatore python web django</h2>
@@ -68,9 +72,9 @@ def contatto(request, nome="", cognome=""): # rendere opzionale con ' ="" '
     html = "<h2>Contatto: </h2>"
 
     if nome and cognome:
-        html += "<p>Il nome completo è: </p>"
+        html += "<p><b>Il nome completo è: </b></p>"
         html += f"""
-        <h3>{nome} {cognome}</h3>
+        <p>{nome} {cognome}</p>
         """
     elif nome or cognome:
         if nome:
