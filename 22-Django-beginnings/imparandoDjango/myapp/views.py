@@ -29,6 +29,12 @@ def inizio(request):
             html += f"<li>{str(year)}</li>"
         year += 1
 
+    html += "<br/><hr/>"
+    n = 1000
+    for n in range(1000,1051):
+        if n%2 == 0:
+            html += f"<li>{str(n)}</li>"
+
     html += "</ul>"
 
     return HttpResponse(html)
