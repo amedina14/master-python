@@ -26,5 +26,9 @@ urlpatterns = [
     path('inizio/', views.inizio, name='inizio'),
     path('ciao-mondo/', views.ciao_mondo, name='ciao_mondo'),
     path('pagina-prova/', views.pagina, name='pagina'),
-    path('contatto/<str:nome>/<str:cognome>', views.contatto, name='contatto'),
+    path('contatto/', views.contatto, name='contatto_vuoto'),
+    path('contatto/<str:nome>/', views.contatto, name='contatto_nome_barra'),
+    path('contatto/<str:nome>', views.contatto, name='contatto_nome'),
+    path('contatto/<str:nome>/<str:cognome>', views.contatto, name='contatto_completo'),
+    path('contatto//<str:cognome>', views.contatto, name='contatto_cognome'),
 ]
