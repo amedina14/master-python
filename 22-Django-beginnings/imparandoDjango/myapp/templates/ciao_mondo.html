@@ -5,6 +5,7 @@ Ciao Mondo
 {% endblock %}
 
 {% block content %}
-<h1>Home</h1>
-Ciao mondo con Django!!
+    {{block.super}}
+    <h1>Home</h1>
+    Ciao mondo con Django!!
 {% endblock %}
