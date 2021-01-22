@@ -15,7 +15,7 @@ Per visualizzare i risultati dei metodi, bisogna stabilirgli le url: urls.py
 """
 
 layout = """
-<h1>Layout html</h1>
+<h1>NO-Layout html</h1>
 <h2>Sottotitulo | Lista links:</h2>
 <ul>
 <li><a href="/inizio">Inizio</a></li>
@@ -67,10 +67,11 @@ def pagina(request, reindirizzare=0):
     if reindirizzare == 1:
         return redirect('contatto', nome="Adrian", cognome="Medina") #redirect("/contatto-pag/Adrian/Medina") #redirect('contatto', name="Adrian", cognome="Medina")
 
-    return HttpResponse(layout + """
-    <h1>Adrian Medina</h1>
-    <h2>Sviluppatore python web django</h2>
-    """)
+    return render(request, 'pagina.html')
+    #return HttpResponse(layout + """
+    #<h1>Adrian Medina</h1>
+    #<h2>Sviluppatore python web django</h2>
+    #""")
 
 def contatto(request, nome="", cognome=""): # rendere opzionale con ' ="" '
 
