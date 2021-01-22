@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}
+        {% endblock %}
+        | Adrian Medina
+    </title>
+</head>
+
+<body>
+    <h1>Layout html</h1>
+    <hr/>
+    <h2>Sottotitolo | Lista links:</h2>
+    <ul>
+        <li><a href="/inizio">Inizio</a></li>
+        <li><a href="/ciao-mondo">Ciao mondo</a></li>
+        <li><a href="/pagina-prova">Pagina prova</a></li>
+        <li><a href="/contatto-pag">Contatto</a></li>
+    </ul>
+    <hr />
+
+    <div id="content">
+        {% block content %}
+        {% endblock %}
+    </div>
+
+    <hr/>
+    <footer>
+        Adrian Medina &copy; 2021
+    </footer>
+</body>
+
+</html>
