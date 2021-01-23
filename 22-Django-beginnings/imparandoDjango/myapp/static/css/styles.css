@@ -1,4 +1,27 @@
-body{
-    background-color: burlywood;
+/* Stili generali */
+*{
+    margin: 0px;
+    padding: 0px;
     font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+}
+
+body{
+    background-color: burlywood; /* #F2F2F2*/
+}
+
+/* Stili header */
+header{
+    width: 70%;
+    height: 100px;
+    margin: 0px auto;
+    background-color: #23282b;
+}
+
+#logo h1{
+    display: block;
+    letter-spacing: 2px;
+    color: #42a096;
+    text-transform: uppercase;
+    font-weight: normal;
 }
