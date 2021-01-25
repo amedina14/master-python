@@ -2,10 +2,4 @@
     //"python.pythonPath": "C:\\Users\\Utente\\AppData\\Local\\Programs\\Python\\Python38-32\\python.exe"
     "python.pythonPath": "22-Django-beginnings\\django_env\\Scripts\\python.exe",
 
-    "browserSync.config":{
-        "proxy": "localhost:8000",
-        "files": ["static/css/*.css","static/**/*.css","static/**/*"],
-        "browser" : "chrome", //["iexplore"], ["chrome", "firefox"]
-        "codeSync" : true
-    },
 }
