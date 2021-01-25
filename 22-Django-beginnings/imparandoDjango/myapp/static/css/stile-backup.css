@@ -13,7 +13,6 @@ body{
 
 /* Stili header */
 header{
-    width: 70%;
     height: 140px;
     margin: 0px auto;
     background-color: #23282b; /*#23282b*/
@@ -34,6 +33,7 @@ header{
 }
 #logo h1{
     display: block;
+    width: 80%;
     float: left;
     /*text-transform: uppercase;*/
     margin-top: 40px;
@@ -81,7 +81,7 @@ nav ul li a:hover{
 .barra{
     width: 80%;
     margin: 0px auto;
-    margin-bottom: 145px;
+    /*margin-bottom: 145px;*/
 }
 .lato-sinistro{
     display: block;
@@ -97,35 +97,80 @@ nav ul li a:hover{
 }
 .riempimento-barra{
     display: block;
-    width: 97.37%;
+    /*width: 97.37%;*/
     height: 10px;
     background-color: #2b2f30;
     float: left;
 }
 
+/* Contenuto centrale */
+#content{
+    width: 80%;
+    min-height: 930px;
+    margin: 0px auto;
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+
 /* Responsive */
-@media (max-width: 1366px){
+@media (max-width: 501px){
     header{
-        width: 70%;
+        width: 100%;
+    }
+    #logo{
+        width: 96%;
+    }
+    #logo img{
+        margin-left: 15px;
+    }
+    #logo h1{
+        width: 79%;
+        margin-top: 25px;
+        letter-spacing: 1px;
+    }
+    nav{
+        width: 100%;
+    }
+    .barra{
+        width: 100%;
     }
     .riempimento-barra{
-        width: 96.27%;
-        background-color: #2b2f30;
+        width: 91.7%;
     }
 }
 
-@media (max-width: 960px){
+@media (min-width: 502px) and (max-width: 942px){
+    header{
+        width: 72%;
+    }
+}
+
+@media (min-width: 942px) and (max-width: 960px){
+    header{
+        width: 70%;
+    }
     #logo{
         width: 95%;
     }
     .riempimento-barra{
-        width: 94.70%;
-        background-color: #2b2f30;
+        width: 94.65%;
+    }
+}
+
+@media (min-width: 960px) and (max-width: 1366px){
+    header{
+        width: 70%;
+    }
+    .riempimento-barra{
+        width: 96.25%;
     }
 }
 
 @media only screen and (min-width: 1919px){
     header{
         width: 50%;
+    }
+    .riempimento-barra{
+        width: 97.37%;
     }
 }
