@@ -7,7 +7,7 @@
 }
 
 body{
-    background-color: #F2F2F2; /* burlywood */
+    background-color: #F2F2F2;/* #F2F2F2; burlywood */
     /*background-color: #F2F2F2; burlywood */
 }
 
@@ -78,12 +78,49 @@ nav ul li a:hover{
     transition: all 300ms;
 }
 
-
+.barra{
+    width: 80%;
+    margin: 0px auto;
+    margin-bottom: 145px;
+}
+.lato-sinistro{
+    display: block;
+    border-left: 20px solid transparent;
+    border-top: 10px solid #2b2f30;
+    float: left;
+}
+.lato-destro{
+    display: block;
+    border-right: 20px solid transparent;
+    border-top: 10px solid #2b2f30;
+    float: right;
+}
+.riempimento-barra{
+    display: block;
+    width: 97.37%;
+    height: 10px;
+    background-color: #2b2f30;
+    float: left;
+}
 
 /* Responsive */
-@media only screen and (max-width: 1365px){
+@media (max-width: 1366px){
     header{
         width: 70%;
+    }
+    .riempimento-barra{
+        width: 96.27%;
+        background-color: #2b2f30;
+    }
+}
+
+@media (max-width: 960px){
+    #logo{
+        width: 95%;
+    }
+    .riempimento-barra{
+        width: 94.70%;
+        background-color: #2b2f30;
     }
 }
 
