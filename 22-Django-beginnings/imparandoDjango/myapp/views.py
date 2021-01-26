@@ -49,7 +49,11 @@ def inizio(request):
 
     html += "</ul>"
 
-    return HttpResponse(layout + html)
+    #return HttpResponse(layout + html)
+    return render(request, 'inizio.html', {
+        'titolo': 'Inizio',
+        'variable': 'testo di prova per interpolare variabile.'
+    })
 
 def ciao_mondo(request):
     
