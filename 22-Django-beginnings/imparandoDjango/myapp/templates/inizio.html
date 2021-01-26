@@ -1,14 +1,15 @@
 {% extends 'layout.html' %}
 
 {% block title %}
-Home
+{{titolo}}
 {% endblock %}
 
 {% block content %}
 
-{# commento #}
+{# Interpolare le variabili delle view(controller) con le doppie graffe. #}
 
 <h1 class="title">Inizio</h1>
+{{variable}}
 <p>Anni fino al 2050:</p>
 <ul>
 {% endblock %}
