@@ -5,7 +5,8 @@ Ciao Mondo
 {% endblock %}
 
 {% block content %}
+    <!-- Ereda il contenuto originale di un blocco html -->
     {{block.super}}
-    <h1>Home</h1>
+    <h1 class="title">Home</h1>
     Ciao mondo con Django!!
 {% endblock %}
