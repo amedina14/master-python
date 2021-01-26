@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {% load static %}
-    <link rel="stylesheet" type="text/css" href="{% static 'css/stile.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/stile-backup.css' %}"/>
     <title>{% block title %}
         {% endblock %}
         | Adrian Medina
@@ -38,10 +38,11 @@
     </div>
 
     <div id="content">
-        <h2 class="title">Sottotitolo | Contenuto </h2>
-        {% block content %}
-        <em>Contenuto originale: per essere visualizzato si mette dentro '{'{block.super}'}' alla pagina interessata</em>
-        {% endblock %}
+        <div class="box">
+            {% block content %}
+            <strong>Contenuto originale: per essere visualizzato si mette dentro '{'{block.super}'}' alla pagina interessata</strong>
+            {% endblock %}
+        </div>
     </div>
 
     <hr/>
