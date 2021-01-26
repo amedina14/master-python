@@ -49,10 +49,13 @@ def inizio(request):
 
     html += "</ul>"
 
+    nome="Adrian Medina"
+
     #return HttpResponse(layout + html)
     return render(request, 'inizio.html', {
         'titolo': 'Inizio',
-        'variable': 'testo di prova per interpolare variabile.'
+        'variable': 'testo di prova per interpolare variabile.',
+        'nome': nome,
     })
 
 def ciao_mondo(request):
