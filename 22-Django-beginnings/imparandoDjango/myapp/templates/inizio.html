@@ -17,6 +17,13 @@
     <strong>User name non esiste o non coincide</strong>
 {% endif %}
 
+<strong>Linguaggi di programmazione web popolari: </strong>
+<ul id="linguaggi-prog">
+{% for language in languages %}
+    <p>{{language}}</p>
+{% endfor %}
+</ul>
+
 <p>Anni fino al 2050:</p>
 <ul>
 {{html}}
