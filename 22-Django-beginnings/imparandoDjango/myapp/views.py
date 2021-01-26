@@ -52,8 +52,8 @@ def inizio(request):
 
     # Esempi con template language of django
     nome="Adrian Medina"
-    languages = ["python","java",".net","javascript","php"]
-    #language = ""
+    languages = ["javascript","java",".net","python","php"]
+    #languages = []
 
     #return HttpResponse(layout + html)
     return render(request, 'inizio.html', {
