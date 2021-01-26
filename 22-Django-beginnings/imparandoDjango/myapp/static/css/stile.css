@@ -5,11 +5,11 @@
     font-family: Arial, Helvetica, sans-serif;
     text-decoration: none;
 }
-p, h2, h3, #linguaggi-prog{
+.box p, .box h2, .box h3, .box  #linguaggi-prog{
     margin-top: 5px;
     margin-bottom: 5px;
 }
-#linguaggi-prog, ol{
+.box #linguaggi-prog, .box ol{
     margin-left: 20px;
 }
 
