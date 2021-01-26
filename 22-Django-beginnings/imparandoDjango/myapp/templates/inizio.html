@@ -47,7 +47,13 @@
     <p>{{forloop.counter}} - {{i}}</p>
 {% endfor %}
 
-<p>Anni fino al 2050:</p>
+<p><strong>Anni fino al 2050:</strong></p>
 <ul>
-{{html}}
+{% for year in rango %}
+    {# filtri: |divisibleby:2 ritorna un boleano #}
+    {% if year|divisibleby:2 == True %}
+        <p>{{year}}</p>
+    {% endif %}
+{% endfor %}
+
 {% endblock %}
