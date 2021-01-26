@@ -9,7 +9,15 @@
 {# Interpolare le variabili delle view(controller) con le doppie graffe. #}
 
 <h1 class="title">Inizio</h1>
-{{variable}}
+<p>{{variable}}</p>
+
+{% if nome and nome == "Adrian Medina" %}
+    <p>Nome completo: {{nome}}</p>
+{% else %}
+    <strong>User name non esiste o non coincide</strong>
+{% endif %}
+
 <p>Anni fino al 2050:</p>
 <ul>
+{{html}}
 {% endblock %}
