@@ -29,11 +29,12 @@ layout = """
 def inizio(request):
 
     # Esempio con il metodo HttpResponse
-    html = """
+    """
+    html = ""
     <h1>Inizio</h1>
     <p>Anni fino al 2050:</p>
     <ul>
-    """
+    ""
     year = 2021
 
     #for i in range(year,2051):
@@ -49,11 +50,15 @@ def inizio(request):
             html += f"<li>{str(n)}</li>"
 
     html += "</ul>"
+    """
 
     # Esempi con template language of django
     nome="Adrian Medina"
     languages = ["javascript","java",".net","python","php"]
     #languages = []
+
+    year = 2021
+    rango = range(year,2051)
 
     #return HttpResponse(layout + html)
     return render(request, 'inizio.html', {
@@ -61,7 +66,8 @@ def inizio(request):
         'variable': 'testo di prova per interpolare variabile.',
         'nome': nome,
         'languages': languages,
-        #'language': language,
+        #'year': year,
+        'rango': rango,
     })
 
 def ciao_mondo(request):
