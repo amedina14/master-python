@@ -28,6 +28,7 @@ layout = """
 
 def inizio(request):
 
+    # Esempio con il metodo HttpResponse
     html = """
     <h1>Inizio</h1>
     <p>Anni fino al 2050:</p>
@@ -36,7 +37,7 @@ def inizio(request):
     year = 2021
 
     #for i in range(year,2051):
-    while year <= 2051:
+    while year <= 2050:
         if year % 2 == 0:
             html += f"<li>{str(year)}</li>"
         year += 1
@@ -49,13 +50,18 @@ def inizio(request):
 
     html += "</ul>"
 
+    # Esempi con template language of django
     nome="Adrian Medina"
+    languages = ["python","java",".net","javascript","php"]
+    #language = ""
 
     #return HttpResponse(layout + html)
     return render(request, 'inizio.html', {
         'titolo': 'Inizio',
         'variable': 'testo di prova per interpolare variabile.',
         'nome': nome,
+        'languages': languages,
+        #'language': language,
     })
 
 def ciao_mondo(request):
