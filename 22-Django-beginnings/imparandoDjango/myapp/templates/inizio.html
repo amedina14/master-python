@@ -20,9 +20,32 @@
 <strong>Linguaggi di programmazione web popolari: </strong>
 <ul id="linguaggi-prog">
 {% for language in languages %}
-    <p>{{language}}</p>
+    <p>{{language}} | posizione 1? {{forloop.first}}</p>
+{% empty %}
+    <em>Non ci sono linguaggi disponibili.</em>
 {% endfor %}
 </ul>
+
+<h3>Primo linguaggio:</h3>
+{% for i in languages %}
+    {% if forloop.first %}
+        <p>{{i}}</p>
+    {% endif %}
+{% endfor %}
+
+<h3>Ultimo linguaggio:</h3>
+{% for i in languages %}
+    {% if forloop.last %}
+        <p>{{i}}</p>
+    {% endif %}
+{% endfor %}
+
+<h3>Top 5 di linguaggi:</h3>
+{% for i in languages %}
+    {# si può iniziare a contare da 0 con .counter0 #}
+    {# Esiste anche .revcounter e .revcounter0 che inverte il contatore. #}
+    <p>{{forloop.counter}} - {{i}}</p>
+{% endfor %}
 
 <p>Anni fino al 2050:</p>
 <ul>
