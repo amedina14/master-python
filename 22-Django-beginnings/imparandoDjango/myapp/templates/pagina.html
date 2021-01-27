@@ -7,5 +7,42 @@ Pagina
 {% block content %}
     <h1 class="title">Pagina</h1>
     <h2>Adrian Medina</h2>
-    <h2>Sviluppatore python web django</h2>
+    <p>Sviluppatore python web django</p>
+
+    <h2>Filters django</h2>
+    <p><strong>Filter Cut:</strong></p>
+    <p>{{ "Filters, mini funzioni: Cut, taglia gli elementi passati per parametro "|cut:" " }}</p>
+    <p>Toglie tutte le 't' minuscole: {{ "Toglie tutte le 't'"|cut:"t" }}</p></br>
+
+    <p><strong>Filter default:</strong></p>
+    <p>{{testo|default:"Non ci sono cose da fare"}}</p></br>
+
+    <p><strong>Filter first e last:</strong></p>
+    <p>First option: {{priorita|first}}</p>
+    <p>Last option: {{priorita|last}}</p></br>
+
+    <p><strong>Filter join:</strong></p>
+    <p>Une gli elementi di una lista separati dall'elemento passato come parametro. (" ", ', ', ecc..)</p>
+    <p>Esempio:</p>
+    <p>{{priorita|join:', '}}</p></br>
+
+    <p><strong>Filter length:</strong></p>
+    <p>Può contare gli elementi della lista. Esempio:</p>
+    <p>Elementi della lista delle priorità: {{priorita|length}}</p>
+    <p>Così come può contare i caratteri di una stringa: {{"Così come può contare i caratteri di una stringa:"|length}}</p></br>
+
+    <p><strong>Filter for text trasform upper, lower and capfirst:</strong></p>
+    <p>{{"text trasformation to upper"|upper}}</p>
+    <p>{{"TEXT TRASFORMATION TO LOWER"|lower}}</p>
+    <p>{{"text trasformation to upper"|capfirst}}</p></br>
+
+    <p><strong>Gets a random element by a list or string:</strong></p>
+    <p>Priorità: {{priorita|random}}</p>
+    <p>Dado a 6 facce: {{"123456"|random}}</p>
+    <p>Frase del giorno: {{frasi|random}}</p></br>
+
+    <p><strong>Filter striptags plus wordcount. These can be combined with multiple filters:</strong></p>
+    <p>{{"<h1>Previene l'inniezione di tags nel interpolazione del linguaggio di template di django</h1>"|striptags}}</p>
+    <p>Toglie i tags html e conta il numero delle parole della frase precedente: {{"<h1>Previene l'inniezione di tags nel interpolazione del linguaggio di template di django</h1>"|striptags|wordcount}}</p></br>
+
 {% endblock %}
