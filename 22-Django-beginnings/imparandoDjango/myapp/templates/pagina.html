@@ -1,4 +1,5 @@
 {% extends 'layout.html' %}
+{% load filters %}
 
 {% block title %}
 Pagina
@@ -44,5 +45,7 @@ Pagina
     <p><strong>Filter striptags plus wordcount. These can be combined with multiple filters:</strong></p>
     <p>{{"<h1>Previene l'inniezione di tags nel interpolazione del linguaggio di template di django</h1>"|striptags}}</p>
     <p>Toglie i tags html e conta il numero delle parole della frase precedente: {{"<h1>Previene l'inniezione di tags nel interpolazione del linguaggio di template di django</h1>"|striptags|wordcount}}</p></br>
+
+    {{"Adrian Medina"|saluto|safe}}
 
 {% endblock %}
