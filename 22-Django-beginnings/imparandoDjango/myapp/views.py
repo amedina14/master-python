@@ -86,7 +86,24 @@ def pagina(request, reindirizzare=0):
     if reindirizzare == 1:
         return redirect('contatto', nome="Adrian", cognome="Medina") #redirect("/contatto-pag/Adrian/Medina") #redirect('contatto', name="Adrian", cognome="Medina")
 
-    return render(request, 'pagina.html')
+    return render(request, 'pagina.html', {
+        'testo': 'Fare la spesa',
+        'priorita': ['Bassa','Media','Alta'],
+        'frasi': ["“Misurare i progressi della programmazione dalle linee di codice è come misurare i progressi nella costruzione di aerei dal loro peso.” Bill Gates",
+        "“I bravi programmatori sanno cosa scrivere. I migliori sanno cosa riscrivere.” ERIC STEVEN RAYMOND",
+        "“Distribuisci presto. Distribuisci spesso. E presta ascolto agli utenti.” ERIC STEVEN RAYMOND",
+        "“Un sistema di sicurezza è sicuro soltanto finché è segreto.” ERIC STEVEN RAYMOND",
+        "“Einstein ha argomentato che ci devono essere spiegazioni semplificate della natura, perché Dio non è capriccioso o arbitrario. Tale fede non è di conforto al programmatore di software.” FREDERICK PHILLIPS BROOKS JR.",
+        "“Un pessimo programmatore può creare due posti di lavoro all'anno. ” DAVE PARNAS",
+        "“L'istruzione alla scienza del computer non può rendere chiunque un programmatore esperto più di quanto lo studio dei pennelli e dei colori possa rendere qualcuno un pittore esperto.” ERIC STEVEN RAYMOND",
+        "“Nelle conversazioni personali con personale tecnico, io mi definisco un hacker. Ma quando sto parlando coi giornalisti dico solo ‘programmatore’ o qualcosa di simile.” CISCO HOUSTON",
+        "“Programmare è un atto innaturale.” ALAN PERLIS",
+        "“Riposa in pace, Steve Jobs. Scommetto che in questo momento sei occupato a rivoluzionare l'Aldilà per rendere il nostro arrivo migliore.” JOE SATRIANI",
+        "“1. Se la modifica di un programmatore a un programma esistente funziona, probabilmente non era quello che voleva il cliente. 2. Il cliente non sa quello che vuole, ma sa quello che non vuole.” ARTHUR BLOCH",
+        "“I vecchi programmatori non muoiono mai: rinunciano solo alle loro risorse.”",
+        "“Non è necessario essere pazzi per essere un webmaster (ma aiuta).”",
+        "“Non c'è linguaggio in cui sia difficile scrivere cattivi programmi.” ARTHUR BLOCH"]
+    })
     #return HttpResponse(layout + """
     #<h1>Adrian Medina</h1>
     #<h2>Sviluppatore python web django</h2>
