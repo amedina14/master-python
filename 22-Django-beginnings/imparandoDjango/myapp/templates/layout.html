@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {% load static %}
-    <link rel="stylesheet" type="text/css" href="{% static 'css/stile.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/stile-backup.css' %}"/>
     <title>{% block title %}
         {% endblock %}
         | Adrian Medina
@@ -25,10 +25,10 @@
 
     <nav>
         <ul id="navmenu">
-            <li><a href="/inizio">Inizio</a></li>
-            <li><a href="/ciao-mondo">Ciao mondo</a></li>
-            <li><a href="/pagina-prova">Pagina prova</a></li>
-            <li><a href="/contatto-pag">Contatto</a></li>
+            <li><a href={% url 'inizio' %}>Inizio</a></li>
+            <li><a href={% url 'ciao_mondo' %}>Ciao mondo</a></li>
+            <li><a href={% url 'pagina' %}>Pagina prova</a></li>
+            <li><a href={% url 'contatto' nome='Adriano' cognome='Medina' %}>Contatto</a></li>
         </ul>
     </nav>
     <div class="barra">

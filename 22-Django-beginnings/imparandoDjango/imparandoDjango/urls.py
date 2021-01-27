@@ -22,7 +22,7 @@ from myapp import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.inizio, name='index'),
+    path('', views.inizio, name='inizio'),
     path('inizio/', views.inizio, name='inizio'),
     path('ciao-mondo/', views.ciao_mondo, name='ciao_mondo'),
     path('pagina-prova/', views.pagina, name='pagina'),
