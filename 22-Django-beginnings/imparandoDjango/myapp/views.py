@@ -1,4 +1,5 @@
 from django.shortcuts import render, HttpResponse, redirect
+from myapp.models import Article, Category
 
 # Create your views here.
 # MVC = Modello Vista Controller => Azioni (metodi) 
@@ -129,3 +130,14 @@ def contatto(request, nome="", cognome=""): # rendere opzionale con ' ="" '
 
 
     return HttpResponse(layout + html)
+
+def create_article(request):
+    article = Article(
+        title = 'Primo articolo!',
+        content= "Contenuto dell'articolo",
+        public= True,
+    )
+    # Persistenza nel DB
+    article.save()
+
+    return HttpResponse("Article created")
