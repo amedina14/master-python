@@ -131,13 +131,13 @@ def contatto(request, nome="", cognome=""): # rendere opzionale con ' ="" '
 
     return HttpResponse(layout + html)
 
-def create_article(request):
+def create_article(request, title, content, public):
     article = Article(
-        title = 'Primo articolo!',
-        content= "Contenuto dell'articolo",
-        public= True,
+        title = title,
+        content= content,
+        public= public,
     )
     # Persistenza nel DB
     article.save()
 
-    return HttpResponse("Article created")
+    return HttpResponse(f"Article created: {article.title} - {article.content}")
