@@ -153,3 +153,18 @@ def legge_articolo(request, id):
         response = f"<b>Articolo non trovato</b>"
 
     return HttpResponse(response)
+
+def modifica_articolo(request, id):
+
+#    try:
+    articolo = Article.objects.get(pk=id)
+    articolo.title = "Inter batte Benevento"
+    articolo.content = "Seconda in classifica a due punti"
+    articolo.public = True
+    articolo.save()
+    response = f"Articolo modificato: <p><b>{articolo.title}</b></p><p>{articolo.content}</p><p>{articolo.public}</p>"
+#    except:
+#        response = f"<b>Articolo non trovato</b>"
+    
+    return HttpResponse(response)
+    
