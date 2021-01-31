@@ -140,4 +140,16 @@ def create_article(request, title, content, public):
     # Persistenza nel DB
     article.save()
 
-    return HttpResponse(f"Article created: {article.title} - {article.content}")
+    return HttpResponse(f"Article created: <b>{article.title}</b> - {article.content}")
+
+def legge_articolo(request, id):
+
+    # Facciamo uso del modello per leggere i valori del DB
+    # Accede al modello > ai suoi oggetti > e prendi un solo registro (get)
+    try:
+        articolo = Article.objects.get(id=id, public=True)
+        response = f"Articolo: <b>{articolo.title}</b>"
+    except:
+        response = f"<b>Articolo non trovato</b>"
+
+    return HttpResponse(response)
