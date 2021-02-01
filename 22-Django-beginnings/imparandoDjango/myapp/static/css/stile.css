@@ -5,6 +5,11 @@
     font-family: Arial, Helvetica, sans-serif;
     text-decoration: none;
 }
+.clearfix{
+    clear: both;
+    float: none;
+}
+
 .box p, .box h2, .box h3, .box  #linguaggi-prog{
     margin-top: 5px;
     margin-bottom: 5px;
@@ -212,3 +217,27 @@ footer{
         width: 97.37%;
     }
 }
+
+.button-link{
+    display:block;
+    width: auto;
+    float:left;
+    border: 1px solid white;
+    background-color:DeepSkyBlue;
+    color:white;
+    margin-right:10px;
+    margin-top:20px;
+    margin-bottom:20px;
+    box-shadow: 0px 0px 5px gray;
+    border-radius:5px;
+    padding:10px;
+}
+
+.button-link.btn-elimina{
+    background-color: #FF82AB;
+}
+
+
+/*
+
+*/
