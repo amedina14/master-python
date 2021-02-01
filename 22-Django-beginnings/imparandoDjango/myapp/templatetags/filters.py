@@ -23,3 +23,10 @@ def saluto(value):
 # Lo stesso vale per: 
 # 22-Django-beginnings\imparandoDjango\imparandoDjango\__pycache__ 
 # 22-Django-beginnings\imparandoDjango\myapp\__pycache__
+
+@register.filter(name='preview')
+def preview(value):
+
+    result = value[:30]
+
+    return result
