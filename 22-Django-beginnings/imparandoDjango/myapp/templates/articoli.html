@@ -1,4 +1,5 @@
 {% extends 'layout.html' %}
+{% load filters %}
 
 {% block title %}
 Elenco Articoli
@@ -9,12 +10,25 @@ Elenco Articoli
 
     <ul>
         {% for i in articoli %}
-        <li>
-            <h1 class="title">{{i.id}}. {{i.title}}</h1>
-            <p>{{i.content}}</p>
-        </li>
+
+            <li style="list-style:none;">
+                <h1 class="title">{{i.title}}</h1>
+                <div style="color:#aaa;font-size:15px;">
+                    [codice art. {{i.id}}] - Ultimo aggiornamento <em>{{i.updated_at}} Europe/Rome</em>
+                </div>
+                <p> {{i.content|preview|safe}}... </p> <!-- {{i.content|slice:30}} -->
+                <a class="button-link" href="{%url 'articolo' id=i.id %}">Leggi articolo</a>
+                <a class="button-link btn-elimina" href="{%url 'elimina' id=i.id %}">Elimina articolo</a>
+            </li>
+
+            <div class="clearfix"></div>
+
         {% endfor %}
     </ul>
+    
+    <div style="margin-top:30px;">
+        <a href="">Aggiungi articolo</a>
+    </div>
 
 {% endblock %}
 
