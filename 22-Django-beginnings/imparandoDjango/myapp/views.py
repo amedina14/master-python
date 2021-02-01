@@ -148,11 +148,16 @@ def legge_articolo(request, id):
     # Accede al modello > ai suoi oggetti > e prendi un solo registro (get)
     try:
         articolo = Article.objects.get(id=id, public=True)
-        response = f"Articolo: <b>{articolo.title}</b>"
+        errore = "Articolo caricato con successo"
+        #response = f"Articolo: <b>{articolo.title}</b>"
     except:
-        response = f"<b>Articolo non trovato</b>"
+        errore = f"<b>Articolo non trovato</b>"
 
-    return HttpResponse(response)
+    #return HttpResponse(response)
+    return render(request,'leggi_articolo.html', {
+        'articolo': articolo,
+        'errore': errore,
+    })
 
 def modifica_articolo(request, id):
 
@@ -174,8 +179,17 @@ def elenco_articoli(request):
     # Ordina discendentemente: dalla modifica del articolo più recente alla più vecchia.
     # Limita il numero di righe da visualizzare [3:7]
     articoli = Article.objects.order_by('-updated_at')[0:10]
+    #preview = Article.objects.all('content')[:200]
 
 
     return render(request, 'articoli.html', {
         'articoli': articoli,
+        #'preview': preview,
     })
+
+def elimina_articolo(request, id):
+
+    articolo = Article.objects.get(pk=id)
+    articolo.delete()
+
+    return redirect('elenco')
