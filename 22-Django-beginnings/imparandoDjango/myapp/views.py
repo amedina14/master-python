@@ -170,7 +170,11 @@ def modifica_articolo(request, id):
 
 def elenco_articoli(request):
     
-    articoli = Article.objects.all()
+    #articoli = Article.objects.all()
+    # Ordina discendentemente: dalla modifica del articolo più recente alla più vecchia.
+    # Limita il numero di righe da visualizzare [3:7]
+    articoli = Article.objects.order_by('-updated_at')[0:10]
+
 
     return render(request, 'articoli.html', {
         'articoli': articoli,
