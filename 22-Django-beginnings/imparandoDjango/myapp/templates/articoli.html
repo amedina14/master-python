@@ -10,7 +10,7 @@ Elenco Articoli
     <ul>
         {% for i in articoli %}
         <li>
-            <h1 class="title">{{i.title}}</h1>
+            <h1 class="title">{{i.id}}. {{i.title}}</h1>
             <p>{{i.content}}</p>
         </li>
         {% endfor %}
