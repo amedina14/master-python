@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {% load static %}
-    <link rel="stylesheet" type="text/css" href="{% static 'css/stile-backup.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/stile.css' %}"/>
     <title>{% block title %}
         {% endblock %}
         | Adrian Medina
@@ -19,7 +19,7 @@
         <div id="logo">
             <!-- logo django -->
             <img src="{% static 'img/logo.png' %}"/>
-            <h1>Web site with django | Layout html</h1>
+            <h1>La Gazzetta del programmatore | Blog </h1>
         </div>
     </header>
 
@@ -29,6 +29,7 @@
             <li><a href={% url 'ciao_mondo' %}>Ciao mondo</a></li>
             <li><a href={% url 'pagina' %}>Pagina prova</a></li>
             <li><a href={% url 'contatto' nome='Adriano' cognome='Medina' %}>Contatto</a></li>
+            <li><a href={% url 'elenco' %}>Ultime Notizie</a></li>
         </ul>
     </nav>
     <div class="barra">
