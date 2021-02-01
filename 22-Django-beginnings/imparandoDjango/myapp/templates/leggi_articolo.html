@@ -1,0 +1,13 @@
+{%extends 'layout.html'%}
+
+{% block title %}Leggi Articolo{% endblock title %}
+
+{% block content %}
+
+    <h1 class="title">{{articolo.title}}</h1>
+    <div style="color:#aaa;font-size:15px;">
+        [codice art. {{articolo.id}}] - Ultimo aggiornamento <em>{{articolo.updated_at}} Europe/Rome</em>
+    </div>
+    <p>{{articolo.content}}</p>
+
+{% endblock content %}
